@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EasyDrop – পণ্য আমাদের, লাভ আপনার</title>
+<meta name="description" content="EasyDrop বাংলাদেশের অনলাইন রিসেলারদের ড্রপশিপিং প্ল্যাটফর্ম। পণ্য বেছে নিন, নিজের দামে অর্ডার দিন। প্যাকেজিং, ডেলিভারি ও ক্যাশ কালেকশন আমরা সামলাই, লাভ জমা হয় আপনার ওয়ালেটে।">
+<meta name="theme-color" content="#047857">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='28 28 52 54'%3E%3Cpath d='M54 28l26 13-26 13-26-13z' fill='%23047857'/%3E%3Cpath d='M28 43l24 12v27L28 70z' fill='%2310b981'/%3E%3Cpath d='M56 55l24-12v27L56 82z' fill='%230E7490'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B2F35; --ink2:#46686E; --emerald:#047857; --teal:#0E7490; --mint:#F0FBF8; --soft:#E2F6F1; --line:#CFE6E1;
+  --paper:#FFFEFA; --tape:#E8B64C; --bad:#B42323;
+  --brand:linear-gradient(100deg,#047857,#0E7490);
+  --wrap:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font-family:"Anek Bangla","Noto Sans Bengali","Hind Siliguri",system-ui,sans-serif;font-size:17px;line-height:1.7;color:var(--ink);background:var(--mint);-webkit-text-size-adjust:100%}
+img,svg{max-width:100%}
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--tape);outline-offset:3px;border-radius:4px}
+.wrap{width:min(var(--wrap),100% - 40px);margin-inline:auto}
+h1,h2,h3{line-height:1.25;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(26px,3.6vw,38px);font-weight:800}
+p{margin:0}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:700;text-decoration:none;border-radius:12px;padding:13px 22px;border:2px solid transparent;cursor:pointer;transition:transform .15s,background .15s}
+.btn:active{transform:translateY(1px)}
+.btn.solid{background:#fff;color:var(--emerald)}
+.btn.solid:hover{background:var(--soft)}
+.btn.line{border-color:rgba(255,255,255,.7);color:#fff}
+.btn.line:hover{background:rgba(255,255,255,.14)}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.dark:hover{background:#12454d}
+
+/* ---------- top bar + hero (the same green-to-teal as the app header) ---------- */
+.hero{background:var(--brand);color:#fff;border-radius:0 0 40px 40px;padding-bottom:84px}
+.bar{display:flex;align-items:center;gap:20px;padding:18px 0}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:800;font-size:22px}
+.brand svg{width:34px;height:36px}
+.bar nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.bar nav a{color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:6px 12px;border-radius:99px;opacity:.92}
+.bar nav a:hover{background:rgba(255,255,255,.16);opacity:1}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center;padding-top:40px}
+.hero h1{font-size:clamp(40px,6.4vw,76px);font-weight:800;line-height:1.12}
+.hero h1 span{display:block}
+.hero .lead{margin-top:22px;font-size:clamp(17px,1.9vw,20px);max-width:34em;color:#E6FBF4}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero .fine{margin-top:18px;font-size:14px;color:#BFEFE3}
+
+/* ---------- the order slip (hero centrepiece) ---------- */
+.slip{position:relative;background:var(--paper);color:var(--ink);border-radius:6px 6px 0 0;padding:34px 26px 26px;max-width:420px;margin-left:auto;box-shadow:0 22px 40px -18px rgba(3,40,32,.55);transform-origin:50% 0;animation:drop .9s cubic-bezier(.2,.9,.3,1.15) both}
+.slip::before{content:"";position:absolute;top:-12px;left:50%;width:120px;height:28px;margin-left:-60px;background:var(--tape);opacity:.92;transform:rotate(-3deg);border-radius:2px}
+.slip::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:10px;background:radial-gradient(circle at 8px 0,transparent 7px,var(--paper) 7.5px) 0 0/16px 10px repeat-x}
+@keyframes drop{from{opacity:0;transform:translateY(-34px) rotate(-3deg)}to{opacity:1;transform:none}}
+.slip h2{font-size:19px;font-weight:800}
+.slip .code{font-size:14px;color:var(--ink2);margin-top:2px}
+.slip .code b{color:var(--emerald)}
+.rows{margin:16px 0 4px;padding:0;list-style:none}
+.rows li{display:flex;align-items:baseline;gap:8px;padding:3px 0}
+.rows li::after{content:"";order:2;flex:1;border-bottom:2px dotted #C3D8D3;transform:translateY(-4px)}
+.rows li span{order:1}
+.rows li b{order:3;font-variant-numeric:tabular-nums}
+.rows .total{padding-top:12px;margin-top:8px;border-top:2px dashed #B7CFC9;font-size:19px;font-weight:800}
+.rows .total b{color:var(--emerald)}
+.rows .total.neg b{color:var(--bad)}
+.ctrl{margin-top:18px;padding-top:14px;border-top:2px dashed #B7CFC9}
+.ctrl label,.ctrl legend{font-weight:700;font-size:15px;padding:0}
+.ctrl output{font-weight:800;color:var(--emerald)}
+.ctrl fieldset{border:0;margin:14px 0 0;padding:0}
+input[type=range]{width:100%;margin:8px 0 0;accent-color:var(--emerald);height:28px}
+.zones{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.zones input{position:absolute;opacity:0;pointer-events:none}
+.zones label{display:block;text-align:center;font-size:14px;font-weight:600;padding:8px 4px;border:2px solid var(--line);border-radius:10px;cursor:pointer;background:#fff;line-height:1.35}
+.zones input:checked+label{border-color:var(--emerald);background:#D1FAE5}
+.zones input:focus-visible+label{outline:3px solid var(--tape);outline-offset:2px}
+.warn{margin-top:10px;font-size:14px;color:var(--bad);font-weight:600;min-height:1.7em}
+.bars{height:34px;margin-top:14px;opacity:.85;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 5px,var(--ink) 5px 6px,transparent 6px 10px,var(--ink) 10px 13px,transparent 13px 15px)}
+
+/* ---------- sections ---------- */
+section{padding:84px 0 0}
+.head{max-width:40em}
+.head p{margin-top:12px;color:var(--ink2)}
+
+/* flow: a real sequence, drawn like a parcel's tracking line */
+.flow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:56px;margin-top:40px;align-items:start}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{position:relative;padding:0 0 30px 62px;counter-increment:s}
+.steps li::before{content:counter(s,bengali);position:absolute;left:0;top:0;width:42px;height:42px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;display:grid;place-items:center;font-size:19px}
+.steps li::after{content:"";position:absolute;left:20px;top:46px;bottom:4px;width:2px;background:repeating-linear-gradient(var(--line) 0 6px,transparent 6px 11px)}
+.steps li:last-child::after{display:none}
+.steps h3{font-size:19px;font-weight:700}
+.steps p{color:var(--ink2);margin-top:2px}
+.track{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:22px 22px 8px;position:sticky;top:84px}
+.track h3{font-size:17px;font-weight:800;margin-bottom:14px}
+.track ol{list-style:none;margin:0;padding:0}
+.track li{display:flex;gap:12px;align-items:flex-start;padding-bottom:16px;position:relative}
+.track li::before{content:"";flex:none;width:16px;height:16px;border-radius:50%;margin-top:6px;background:var(--emerald);box-shadow:0 0 0 4px #D1FAE5}
+.track li:not(:last-child)::after{content:"";position:absolute;left:7px;top:24px;bottom:-4px;width:2px;background:var(--emerald)}
+.track li small{display:block;color:var(--ink2);font-size:14px;line-height:1.5}
+.track li.off::before{background:#fff;box-shadow:none;border:2px solid #C0475C}
+.track li.off::after{background:none}
+.track li.off b{color:#9E2D40}
+
+/* what you get: a ruled list, not a card grid */
+.get{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 56px;margin-top:34px}
+.get div{padding:18px 0;border-top:2px solid var(--ink)}
+.get h3{font-size:18px;font-weight:700}
+.get p{color:var(--ink2);margin-top:2px;font-size:16px}
+
+/* categories */
+.cats{display:flex;flex-wrap:wrap;gap:10px 12px;margin-top:30px}
+.cats span{font-size:clamp(18px,2.4vw,24px);font-weight:700;padding:8px 20px;border-radius:99px;background:#fff;border:2px solid var(--line)}
+.cats span:nth-child(3n+1){background:#D1FAE5;border-color:#D1FAE5;color:#065F46}
+.cats span:nth-child(3n+2){background:#CFF4FA;border-color:#CFF4FA;color:#155E75}
+
+/* rules */
+.rules{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;margin-top:34px;align-items:start}
+.fees{background:var(--ink);color:#fff;border-radius:20px;padding:26px}
+.fees h3{font-size:18px;font-weight:700;color:#BFEFE3}
+.fees dl{margin:14px 0 0}
+.fees dl div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid #1E5059;font-size:19px}
+.fees dt{font-weight:500}
+.fees dd{margin:0;font-weight:800;font-variant-numeric:tabular-nums}
+.fees p{font-size:14px;color:#9CCFC6;margin-top:12px;line-height:1.6}
+.list{margin:0;padding:0;list-style:none}
+.list li{padding:14px 0 14px 34px;border-bottom:1px solid var(--line);position:relative}
+.list li::before{content:"";position:absolute;left:4px;top:23px;width:14px;height:8px;border-left:3px solid var(--emerald);border-bottom:3px solid var(--emerald);transform:rotate(-45deg)}
+.list b{font-weight:700}
+
+/* faq */
+.faq{max-width:820px;margin-top:30px}
+details{border-top:2px solid var(--ink);padding:0}
+details:last-child{border-bottom:2px solid var(--ink)}
+summary{cursor:pointer;list-style:none;font-weight:700;font-size:19px;padding:18px 40px 18px 0;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:12px;font-size:30px;font-weight:500;color:var(--emerald);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 40px 20px 0;color:var(--ink2)}
+
+/* contact */
+.contact{background:var(--brand);color:#fff;border-radius:32px;padding:clamp(30px,5vw,56px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:36px;align-items:center}
+.contact h2{font-size:clamp(28px,4vw,44px)}
+.contact p{margin-top:12px;color:#E6FBF4;max-width:30em}
+.links{display:grid;gap:10px}
+.links a{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.14);color:#fff;text-decoration:none;font-weight:700;padding:14px 18px;border-radius:14px}
+.links a:hover{background:rgba(255,255,255,.26)}
+.links small{font-weight:500;opacity:.85}
+footer{padding:44px 0 40px;color:var(--ink2);font-size:15px;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+footer b{color:var(--ink)}
+
+@media(max-width:900px){
+  .hero-grid,.flow,.rules,.contact{grid-template-columns:minmax(0,1fr)}
+  .hero-grid{gap:40px}
+  .slip{margin:0 auto}
+  .track{position:static}
+  .get{grid-template-columns:minmax(0,1fr)}
+  .bar nav a:not(:last-child){display:none}
+  section{padding-top:64px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.slip{animation:none}summary::after{transition:none}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="#top" aria-label="EasyDrop হোম">
+        <svg viewBox="28 28 52 54" aria-hidden="true"><path d="M54 28l26 13-26 13-26-13z" fill="#fff"/><path d="M28 43l24 12v27L28 70z" fill="#D1FAE5"/><path d="M56 55l24-12v27L56 82z" fill="#A5F3FC"/></svg>
+        EasyDrop
+      </a>
+      <nav aria-label="প্রধান মেনু">
+        <a href="#kivabe">কীভাবে কাজ করে</a>
+        <a href="#suvidha">সুবিধা</a>
+        <a href="#niyom">চার্জ ও নিয়ম</a>
+        <a href="#proshno">প্রশ্নোত্তর</a>
+        <a href="#jogajog">যোগাযোগ</a>
+      </nav>
+    </div>
+
+    <div class="hero-grid" id="top">
+      <div>
+        <h1><span>পণ্য আমাদের,</span><span>লাভ আপনার।</span></h1>
+        <p class="lead">EasyDrop-এ আপনি শুধু পণ্য বেছে নেন, কাস্টমারের কাছে নিজের দাম ঠিক করেন আর অর্ডার দেন। প্যাকেজিং, ডেলিভারি আর ক্যাশ অন ডেলিভারির টাকা তোলার ঝামেলা আমরা সামলাই। ডেলিভারি হলে লাভ জমা হয় আপনার ওয়ালেটে।</p>
+        <div class="cta">
+          <a class="btn solid" href="https://wa.me/8801863709122" target="_blank" rel="noopener">WhatsApp-এ কথা বলুন</a>
+          <a class="btn line" href="#kivabe">কীভাবে কাজ করে দেখুন</a>
+        </div>
+        <p class="fine">ফেসবুক পেজ, দোকান বা অনলাইন সেলার, যে কেউ অ্যাকাউন্ট খুলতে পারেন। অ্যাডমিন অনুমোদনের পর অর্ডার শুরু।</p>
+      </div>
+
+      <form class="slip" id="calc" aria-label="লাভের হিসাব" onsubmit="return false">
+        <h2>একটি অর্ডারের হিসাব</h2>
+        <p class="code">নমুনা পণ্য · কোড <b>EP1001</b> · সরবরাহ মূল্য ৳৫০০</p>
+
+        <div class="ctrl" style="border-top:0;margin-top:14px;padding-top:0">
+          <label for="sell">কাস্টমারের কাছে বিক্রয় মূল্য <output id="sellOut">৳৯০০</output></label>
+          <input id="sell" type="range" min="500" max="1500" step="10" value="900">
+          <fieldset>
+            <legend>ডেলিভারি এলাকা</legend>
+            <div class="zones" role="radiogroup">
+              <span><input type="radio" name="z" id="z1" value="inside" checked><label for="z1">ঢাকার ভিতরে</label></span>
+              <span><input type="radio" name="z" id="z2" value="sub"><label for="z2">সাব ঢাকা</label></span>
+              <span><input type="radio" name="z" id="z3" value="outside"><label for="z3">ঢাকার বাইরে</label></span>
+            </div>
+          </fieldset>
+        </div>
+
+        <ul class="rows" aria-live="polite">
+          <li><span>কাস্টমার থেকে নেবেন (COD)</span><b id="rCod">৳৯০০</b></li>
+          <li><span>সরবরাহ মূল্য</span><b id="rBase">- ৳৫০০</b></li>
+          <li><span>ডেলিভারি চার্জ</span><b id="rFee">- ৳৬০</b></li>
+          <li class="total" id="rTot"><span>আপনার নিট লাভ</span><b id="rNet">৳৩৪০</b></li>
+        </ul>
+        <p class="warn" id="warn" role="status"></p>
+        <div class="bars" aria-hidden="true"></div>
+      </form>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="kivabe">
+  <div class="wrap">
+    <div class="head">
+      <h2>অ্যাকাউন্ট খোলা থেকে টাকা তোলা, পাঁচ ধাপে</h2>
+      <p>পুরো কাজটা মোবাইল অ্যাপ থেকেই হয়। ডানের ট্র্যাকিং লাইনে দেখুন, একটি অর্ডার কোন কোন অবস্থা পার হয়।</p>
+    </div>
+    <div class="flow">
+      <ol class="steps">
+        <li>
+          <h3>অ্যাকাউন্ট খুলে ফোন নম্বর ভেরিফাই করুন</h3>
+          <p>নাম, ১১ সংখ্যার ফোন নম্বর, দোকান বা পেজের নাম, ঠিকানা ও পাসওয়ার্ড দিন। এসএমএসে ৬ সংখ্যার কোড আসবে।</p>
+        </li>
+        <li>
+          <h3>অ্যাডমিন অনুমোদনের অপেক্ষা</h3>
+          <p>আপনার তথ্য যাচাই করে অ্যাডমিন অ্যাকাউন্ট অনুমোদন করেন। অনুমোদন হলে পণ্য দেখা ও অর্ডার করা শুরু করতে পারবেন।</p>
+        </li>
+        <li>
+          <h3>পণ্য বেছে নিজের দাম ঠিক করুন</h3>
+          <p>ক্যাটাগরি ঘুরে পণ্য দেখুন, ছবি গ্যালারিতে সেভ করে নিজের পেজে পোস্ট করুন। বিক্রয় মূল্য আপনি ঠিক করেন, তবে সরবরাহ মূল্যের নিচে নয়। অ্যাপ ৩০% লাভসহ একটি প্রস্তাবিত মূল্যও দেখায়।</p>
+        </li>
+        <li>
+          <h3>কাস্টমারের তথ্য দিয়ে অর্ডার করুন</h3>
+          <p>কার্টে পণ্য রেখে ডেলিভারি এলাকা বেছে নিন, তারপর কাস্টমারের নাম, ফোন ও ঠিকানা দিন। অর্ডারের আগেই নিট লাভ দেখে নিতে পারবেন।</p>
+        </li>
+        <li>
+          <h3>ডেলিভারি হলে লাভ ওয়ালেটে, সেখান থেকে উত্তোলন</h3>
+          <p>কাস্টমার পণ্য হাতে নিয়ে টাকা দেন, ডেলিভারি সম্পন্ন হলে আপনার লাভ ওয়ালেটে যোগ হয়। bKash, Nagad বা ব্যাংক অ্যাকাউন্টে উত্তোলনের অনুরোধ পাঠান।</p>
+        </li>
+      </ol>
+
+      <aside class="track" aria-label="অর্ডারের অবস্থা">
+        <h3>অর্ডার ট্র্যাকিং, অ্যাপের মতোই</h3>
+        <ol>
+          <li><div><b>অপেক্ষমাণ</b><small>অর্ডার পাঠানো হয়েছে। এই অবস্থায় নিজেই বাতিল করা যায়।</small></div></li>
+          <li><div><b>নিশ্চিত</b><small>অ্যাডমিন অর্ডার কনফার্ম করেছেন।</small></div></li>
+          <li><div><b>পাঠানো হয়েছে</b><small>পার্সেল কুরিয়ারের হাতে।</small></div></li>
+          <li><div><b>ডেলিভারি সম্পন্ন</b><small>লাভ আপনার ওয়ালেটে যোগ হয়।</small></div></li>
+          <li class="off"><div><b>বাতিল বা ফেরত</b><small>এই ক্ষেত্রে লাভ যোগ হয় না। ফেরত অর্ডারে ডেলিভারি চার্জ কাটা হয়।</small></div></li>
+        </ol>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="suvidha">
+  <div class="wrap">
+    <div class="head">
+      <h2>অ্যাপে যা পাবেন</h2>
+      <p>রিসেলারের প্রতিদিনের কাজের জন্য যা লাগে, সব এক জায়গায়।</p>
+    </div>
+    <div class="get">
+      <div><h3>প্রতিটি পণ্যের আলাদা কোড</h3><p>সব পণ্যের একটি করে কোড আছে, যেমন EP1001। অ্যাপের সার্চে কোড লিখলেই পণ্য পাবেন।</p></div>
+      <div><h3>ছবি ডাউনলোড ও বিবরণ কপি</h3><p>পণ্যের ছবি এক চাপে গ্যালারিতে সেভ হয়। বিবরণ কপি করে সরাসরি পোস্টে বসান।</p></div>
+      <div><h3>সাইজ ও কালার বেছে অর্ডার</h3><p>পণ্যে সাইজ বা কালার থাকলে একটি করে বেছে নিতে হয়, তাই ভুল পণ্য যাওয়ার সুযোগ কমে।</p></div>
+      <div><h3>পছন্দের তালিকা ও ভিডিও</h3><p>পছন্দের পণ্য আলাদা করে রাখুন। যেসব পণ্যে ভিডিও আছে, সেগুলো এক চাপে দেখুন।</p></div>
+      <div><h3>ওয়ালেট ও উত্তোলন</h3><p>উত্তোলনযোগ্য ব্যালেন্স, অপেক্ষমাণ লাভ ও প্রতিটি লেনদেনের ইতিহাস দেখা যায়। পাঁচটি পর্যন্ত পেমেন্ট অ্যাকাউন্ট রাখা যায়।</p></div>
+      <div><h3>রিপোর্ট ও নোটিশ</h3><p>মোট অর্ডার, মোট লাভ ও মাসিক হিসাব দেখুন। নতুন পণ্য বা নিয়মের খবর নোটিশ ট্যাবে আসে।</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pronno">
+  <div class="wrap">
+    <div class="head">
+      <h2>বারোটি ক্যাটাগরি, আপনার পেজ যে ধরনেরই হোক</h2>
+    </div>
+    <div class="cats" aria-label="ক্যাটাগরি">
+      <span>পুরুষের পোশাক</span><span>মেয়েদের পোশাক</span><span>বেবি ফ্যাশন</span><span>হোম ডেকর</span>
+      <span>কসমেটিকস</span><span>জুয়েলারি</span><span>ফুড আইটেম</span><span>গিফট আইটেম</span>
+      <span>অ্যাকসেসরিজ</span><span>গ্যাজেটস</span><span>কম্বো</span><span>সিজনাল</span>
+    </div>
+  </div>
+</section>
+
+<section id="niyom">
+  <div class="wrap">
+    <div class="head">
+      <h2>চার্জ ও নিয়ম, সোজাসুজি</h2>
+      <p>লাভের হিসাব সবসময় একই: কাস্টমারের কাছ থেকে যা নেবেন, তা থেকে সরবরাহ মূল্য ও ডেলিভারি চার্জ বাদ দিলে যা থাকে, সেটাই আপনার লাভ।</p>
+    </div>
+    <div class="rules">
+      <div class="fees">
+        <h3>ডেলিভারি চার্জ, প্রতি অর্ডারে</h3>
+        <dl>
+          <div><dt>ঢাকার ভিতরে</dt><dd data-fee="inside">৳৬০</dd></div>
+          <div><dt>সাব ঢাকা</dt><dd data-fee="sub">৳১০০</dd></div>
+          <div><dt>ঢাকার বাইরে</dt><dd data-fee="outside">৳১২০</dd></div>
+        </dl>
+        <p>চার্জ বদলাতে পারে। অর্ডারের সময় অ্যাপে যে চার্জ দেখাবে, সেটাই প্রযোজ্য।</p>
+      </div>
+      <ul class="list">
+        <li><b>বিক্রয় মূল্য</b> সরবরাহ মূল্যের কম হতে পারবে না।</li>
+        <li><b>বাড়তি লাভ</b> ডেলিভারি চার্জের চেয়ে বেশি না হলে অর্ডার করা যায় না। অ্যাপ আগেই দেখিয়ে দেয়।</li>
+        <li><b>ফেরত অর্ডারে</b> লাভ পাওয়া যায় না, আর ডেলিভারি চার্জ আপনার ব্যালেন্স থেকে কাটা হয়। ব্যালেন্স শূন্যের নিচে নামলে পরের ডেলিভারির লাভ থেকে মিটে যায়।</li>
+        <li><b>অর্ডার বাতিল</b> শুধু অপেক্ষমাণ অবস্থায় অ্যাপ থেকে করা যায়।</li>
+        <li><b>উত্তোলন</b> ন্যূনতম ৳৫০০। একসাথে একটির বেশি অনুরোধ অপেক্ষমাণ রাখা যায় না।</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="proshno-uttor">
+  <div class="wrap">
+    <div class="head"><h2>প্রশ্নোত্তর</h2></div>
+    <div class="faq" id="proshno">
+      <details><summary>কারা EasyDrop-এ কাজ করতে পারবেন?</summary><p>ফেসবুক পেজ, দোকান বা অনলাইন সেলার, যার একটি ১১ সংখ্যার মোবাইল নম্বর আছে। অ্যাপে অ্যাকাউন্ট খুলে ফোন ভেরিফাই করতে হয়, তারপর অ্যাডমিন অনুমোদন দিলে কাজ শুরু।</p></details>
+      <details><summary>পণ্য কেনার জন্য আগে টাকা দিতে হয়?</summary><p>অ্যাপে অর্ডারের আগে পণ্যের দাম পরিশোধের কোনো ধাপ নেই। কাস্টমার ডেলিভারির সময় টাকা দেন (ক্যাশ অন ডেলিভারি)।</p></details>
+      <details><summary>লাভ কখন ওয়ালেটে যোগ হয়?</summary><p>অর্ডার ডেলিভারি সম্পন্ন হলে। তার আগে সেটি “অপেক্ষমাণ লাভ” হিসেবে দেখায়।</p></details>
+      <details><summary>কত দামে বিক্রি করব?</summary><p>আপনি নিজেই ঠিক করেন, শুধু সরবরাহ মূল্যের নিচে নামা যাবে না। কত রাখবেন বুঝতে না পারলে অ্যাপের প্রস্তাবিত মূল্য (৩০% লাভসহ) দিয়ে শুরু করুন।</p></details>
+      <details><summary>অর্ডার ফেরত এলে কী হয়?</summary><p>ফেরত অর্ডারে লাভ যোগ হয় না এবং সেই অর্ডারের ডেলিভারি চার্জ আপনার ব্যালেন্স থেকে কাটা হয়।</p></details>
+      <details><summary>টাকা তুলব কীভাবে?</summary><p>অ্যাপে bKash, Nagad বা ব্যাংক অ্যাকাউন্ট যোগ করুন (পাঁচটি পর্যন্ত)। ওয়ালেট থেকে উত্তোলনের অনুরোধ পাঠালে অ্যাডমিন যাচাই করে টাকা পাঠান। ন্যূনতম ৳৫০০।</p></details>
+      <details><summary>অ্যাপ কোথা থেকে পাব?</summary><p>নিচের WhatsApp বা Telegram-এ জানান। আমরা অ্যাপের লিংক পাঠিয়ে দেব।</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="jogajog" style="padding-bottom:20px">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <h2>আজই শুরু করুন</h2>
+        <p>অ্যাকাউন্ট, অ্যাপ বা অর্ডার নিয়ে যেকোনো প্রশ্ন থাকলে সরাসরি লিখুন। আমরা সাহায্য করব।</p>
+      </div>
+      <div class="links">
+        <a href="https://wa.me/8801863709122" target="_blank" rel="noopener">WhatsApp <small>+৮৮০ ১৮৬৩-৭০৯১২২</small></a>
+        <a href="https://t.me/easydrop" target="_blank" rel="noopener">Telegram <small>@easydrop</small></a>
+        <a href="https://facebook.com/easydrop" target="_blank" rel="noopener">Facebook <small>facebook.com/easydrop</small></a>
+        <a href="https://easydrop.com.bd" target="_blank" rel="noopener">Website <small>easydrop.com.bd</small></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="wrap">
+  <footer>
+    <span><b>EasyDrop</b> · আপনার অনলাইন ব্যবসার বিশ্বস্ত সঙ্গী</span>
+    <span>© <span id="yr">২০২৬</span> EasyDrop</span>
+  </footer>
+</div>
+
+<script>
+// Delivery charges shown on this page. Change them here if the admin changes them in the panel (Settings).
+const FEES = { inside: 60, sub: 100, outside: 120 };
+const BASE = 500; // supplier price of the sample product
+
+const bn = n => { try { return Number(n).toLocaleString("bn-BD"); } catch (e) { return String(n); } };
+const tk = n => (n < 0 ? "-" : "") + "৳" + bn(Math.abs(n));
+const $ = id => document.getElementById(id);
+
+// the delivery charge list follows FEES
+document.querySelectorAll("[data-fee]").forEach(e => { e.textContent = tk(FEES[e.dataset.fee]); });
+try { $("yr").textContent = bn(new Date().getFullYear()).replace(",", ""); } catch (e) {}
+
+function calc() {
+  const sell = +$("sell").value;
+  const fee = FEES[document.querySelector("input[name=z]:checked").value];
+  const net = sell - BASE - fee;
+  $("sellOut").textContent = tk(sell);
+  $("rCod").textContent = tk(sell);
+  $("rBase").textContent = "- " + tk(BASE);
+  $("rFee").textContent = "- " + tk(fee);
+  $("rNet").textContent = tk(net);
+  $("rTot").classList.toggle("neg", net <= 0);
+  $("warn").textContent = net <= 0 ? "লাভ ডেলিভারি চার্জের চেয়ে বেশি না হলে অর্ডার করা যায় না। বিক্রয় মূল্য বাড়ান।" : "";
+}
+$("calc").addEventListener("input", calc);
+calc();
+</script>
+</body>
+</html>
