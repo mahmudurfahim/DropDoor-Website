@@ -18,6 +18,7 @@
   --wrap:1120px;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{margin:0;font-family:"Anek Bangla","Noto Sans Bengali","Hind Siliguri",system-ui,sans-serif;font-size:17px;line-height:1.7;color:var(--ink);background:var(--mint);-webkit-text-size-adjust:100%}
 img,svg{max-width:100%}
@@ -146,17 +147,48 @@ details p{padding:0 40px 20px 0;color:var(--ink2)}
 .contact h2{font-size:clamp(28px,4vw,44px)}
 .contact p{margin-top:12px;color:#E6FBF4;max-width:30em}
 .links{display:grid;gap:10px}
-.links a{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.14);color:#fff;text-decoration:none;font-weight:700;padding:14px 18px;border-radius:14px}
+.links a{display:flex;justify-content:space-between;align-items:center;gap:10px;background:rgba(255,255,255,.14);color:#fff;text-decoration:none;font-weight:700;padding:14px 18px;border-radius:14px}
 .links a:hover{background:rgba(255,255,255,.26)}
 .links small{font-weight:500;opacity:.85}
 footer{padding:44px 0 40px;color:var(--ink2);font-size:15px;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
 footer b{color:var(--ink)}
+footer a{color:var(--ink2);font-weight:600}
+
+/* ---------- privacy view ---------- */
+#view-privacy .hero{padding-bottom:64px}
+#view-privacy .hero h1{font-size:clamp(34px,5.4vw,60px);line-height:1.15;margin-top:34px}
+#view-privacy .hero .lead{margin-top:16px;max-width:36em}
+#view-privacy .hero .upd{margin-top:14px;font-size:14px;color:#BFEFE3}
+.back{margin-left:auto;color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:6px 14px;border-radius:99px;border:2px solid rgba(255,255,255,.6)}
+.back:hover{background:rgba(255,255,255,.16)}
+.doc{display:grid;grid-template-columns:240px minmax(0,1fr);gap:56px;margin-top:56px;align-items:start}
+.toc{position:sticky;top:24px;background:#fff;border:2px solid var(--ink);border-radius:18px;padding:18px 20px}
+.toc h2{font-size:16px;font-weight:800;margin-bottom:8px}
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{counter-increment:t}
+.toc a{display:block;text-decoration:none;color:var(--ink2);font-size:15px;font-weight:600;padding:5px 0;line-height:1.45}
+.toc a::before{content:counter(t,bengali) ". ";color:var(--emerald);font-weight:800}
+.toc a:hover{color:var(--emerald)}
+article section{padding:0 0 34px;margin-bottom:34px;border-bottom:2px solid var(--line);line-height:1.75}
+article section:last-child{border-bottom:0;margin-bottom:0}
+article h2{font-size:clamp(22px,3vw,28px);font-weight:800}
+article p{margin-top:10px;color:var(--ink2)}
+article ul{margin:12px 0 0;padding:0;list-style:none}
+article li{position:relative;padding:8px 0 8px 30px;color:var(--ink2)}
+article li::before{content:"";position:absolute;left:3px;top:17px;width:13px;height:7px;border-left:3px solid var(--emerald);border-bottom:3px solid var(--emerald);transform:rotate(-45deg)}
+article li b{color:var(--ink);font-weight:700}
+.note{margin-top:14px;background:#fff;border-left:5px solid var(--emerald);border-radius:8px;padding:14px 18px;color:var(--ink);font-weight:500}
+#view-privacy .contact{margin-top:56px;border-radius:28px;padding:clamp(26px,4vw,44px);gap:28px}
+#view-privacy .contact h2{font-size:clamp(24px,3.4vw,34px)}
+#view-privacy .contact p{margin-top:10px}
 
 @media(max-width:900px){
-  .hero-grid,.flow,.rules,.contact{grid-template-columns:minmax(0,1fr)}
+  .hero-grid,.flow,.rules,.contact,.doc{grid-template-columns:minmax(0,1fr)}
   .hero-grid{gap:40px}
   .slip{margin:0 auto}
   .track{position:static}
+  .toc{position:static}
+  .doc{gap:32px;margin-top:40px}
   .get{grid-template-columns:minmax(0,1fr)}
   .bar nav a:not(:last-child){display:none}
   section{padding-top:64px}
@@ -166,10 +198,13 @@ footer b{color:var(--ink)}
 </head>
 <body>
 
+<!-- ================= HOME ================= -->
+<div id="view-home">
+
 <header class="hero">
   <div class="wrap">
     <div class="bar">
-      <a class="brand" href="#top" aria-label="DropDoor হোম">
+      <a class="brand" href="#/" aria-label="DropDoor হোম">
         <svg viewBox="28 28 52 54" aria-hidden="true"><path d="M54 28l26 13-26 13-26-13z" fill="#fff"/><path d="M28 43l24 12v27L28 70z" fill="#D1FAE5"/><path d="M56 55l24-12v27L56 82z" fill="#A5F3FC"/></svg>
         DropDoor
       </a>
@@ -361,8 +396,149 @@ footer b{color:var(--ink)}
 <div class="wrap">
   <footer>
     <span><b>DropDoor</b> · আপনার অনলাইন ব্যবসার বিশ্বস্ত সঙ্গী</span>
-    <span>© <span id="yr">২০২৬</span> DropDoor</span>
+    <span><a href="#/privacy">গোপনীয়তা নীতি</a> · © <span class="yr">২০২৬</span> DropDoor</span>
   </footer>
+</div>
+
+</div>
+
+<!-- ================= PRIVACY ================= -->
+<div id="view-privacy" hidden>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="#/" aria-label="DropDoor হোম">
+        <svg viewBox="28 28 52 54" aria-hidden="true"><path d="M54 28l26 13-26 13-26-13z" fill="#fff"/><path d="M28 43l24 12v27L28 70z" fill="#D1FAE5"/><path d="M56 55l24-12v27L56 82z" fill="#A5F3FC"/></svg>
+        DropDoor
+      </a>
+      <a class="back" href="#/">← হোমে ফিরুন</a>
+    </div>
+    <h1>গোপনীয়তা নীতি</h1>
+    <p class="lead">আপনি DropDoor অ্যাপ ও ওয়েবসাইট ব্যবহার করলে আমরা কোন তথ্য নিই, কেন নিই আর কীভাবে সুরক্ষিত রাখি, তা এখানে সহজ ভাষায় লেখা আছে।</p>
+    <p class="upd">সর্বশেষ হালনাগাদ: ২৮ অক্টোবর ২০২৬</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="doc">
+    <nav class="toc" aria-label="সূচিপত্র">
+      <h2>এই পাতায় যা আছে</h2>
+      <ol>
+        <li><a href="#tothya">কোন তথ্য সংগ্রহ করি</a></li>
+        <li><a href="#byabohar">তথ্য কেন ব্যবহার করি</a></li>
+        <li><a href="#shayor">কার সাথে তথ্য শেয়ার হয়</a></li>
+        <li><a href="#anumoti">অ্যাপের অনুমতি</a></li>
+        <li><a href="#surokkha">তথ্যের নিরাপত্তা ও সংরক্ষণ</a></li>
+        <li><a href="#odhikar">আপনার অধিকার</a></li>
+        <li><a href="#customer">কাস্টমারের তথ্য নিয়ে আপনার দায়িত্ব</a></li>
+        <li><a href="#poriborton">নীতির পরিবর্তন</a></li>
+        <li><a href="#pv-jogajog">যোগাযোগ</a></li>
+      </ol>
+    </nav>
+
+    <article>
+      <section id="tothya">
+        <h2>১. আমরা কোন তথ্য সংগ্রহ করি</h2>
+        <p>DropDoor ব্যবহারের জন্য যতটুকু তথ্য দরকার, আমরা ততটুকুই নিই।</p>
+        <ul>
+          <li><b>অ্যাকাউন্টের তথ্য:</b> আপনার নাম, ১১ সংখ্যার ফোন নম্বর, দোকান বা পেজের নাম, ঠিকানা এবং পাসওয়ার্ড।</li>
+          <li><b>ফোন ভেরিফিকেশন:</b> এসএমএসে পাঠানো ৬ সংখ্যার কোড যাচাই করার জন্য আপনার ফোন নম্বর।</li>
+          <li><b>অর্ডারের তথ্য:</b> আপনি যে পণ্য অর্ডার করেন, তার সাইজ, কালার, বিক্রয় মূল্য, ডেলিভারি এলাকা এবং অর্ডারের অবস্থা।</li>
+          <li><b>আপনার কাস্টমারের তথ্য:</b> ডেলিভারির জন্য আপনার দেওয়া কাস্টমারের নাম, ফোন নম্বর ও ঠিকানা।</li>
+          <li><b>ওয়ালেট ও পেমেন্টের তথ্য:</b> লাভের হিসাব, লেনদেনের ইতিহাস, উত্তোলনের অনুরোধ এবং উত্তোলনের জন্য যোগ করা bKash, Nagad বা ব্যাংক অ্যাকাউন্টের তথ্য।</li>
+          <li><b>অ্যাপ ব্যবহারের তথ্য:</b> পছন্দের তালিকা, রিপোর্ট দেখার তথ্য এবং অ্যাপ ঠিকমতো চালানোর জন্য প্রয়োজনীয় প্রযুক্তিগত তথ্য, যেমন ডিভাইসের ধরন ও অ্যাপের সংস্করণ।</li>
+          <li><b>আপনার পাঠানো বার্তা:</b> WhatsApp, Telegram বা ফেসবুকে আমাদের লিখলে আপনার নাম, নম্বর ও বার্তা।</li>
+        </ul>
+      </section>
+
+      <section id="byabohar">
+        <h2>২. তথ্য কেন ব্যবহার করি</h2>
+        <ul>
+          <li>আপনার অ্যাকাউন্ট খোলা, যাচাই করা ও অনুমোদন দেওয়ার জন্য।</li>
+          <li>অর্ডার নিশ্চিত করা, পার্সেল প্যাকেজিং ও কুরিয়ারে পাঠানো এবং কাস্টমারের কাছে পৌঁছে দেওয়ার জন্য।</li>
+          <li>ক্যাশ অন ডেলিভারির টাকা আদায় করে আপনার ওয়ালেটে লাভ যোগ করা এবং আপনার উত্তোলনের অনুরোধ যাচাই করে টাকা পাঠানোর জন্য।</li>
+          <li>ফেরত বা বাতিল অর্ডারের হিসাব মেলানোর জন্য।</li>
+          <li>নতুন পণ্য, নিয়ম বা চার্জ বদলের খবর নোটিশ আকারে জানানোর জন্য।</li>
+          <li>জালিয়াতি ও অপব্যবহার ঠেকানো এবং সেবার মান উন্নত করার জন্য।</li>
+        </ul>
+      </section>
+
+      <section id="shayor">
+        <h2>৩. কার সাথে তথ্য শেয়ার হয়</h2>
+        <p>আমরা আপনার ব্যক্তিগত তথ্য বিক্রি করি না। সেবা দেওয়ার জন্য যতটুকু দরকার, শুধু ততটুকু তথ্য নিচের পক্ষগুলোর সাথে শেয়ার হতে পারে।</p>
+        <ul>
+          <li><b>কুরিয়ার সেবা:</b> পার্সেল পৌঁছানোর জন্য কাস্টমারের নাম, ফোন নম্বর ও ঠিকানা।</li>
+          <li><b>এসএমএস ও পেমেন্ট সেবাদাতা:</b> ভেরিফিকেশন কোড পাঠানো এবং bKash, Nagad বা ব্যাংকের মাধ্যমে টাকা পাঠানোর জন্য।</li>
+          <li><b>প্রযুক্তি সেবাদাতা:</b> অ্যাপ ও ওয়েবসাইট চালানোর জন্য হোস্টিং ও সার্ভার সেবা।</li>
+          <li><b>আইনি প্রয়োজনে:</b> আইন বা আদালতের নির্দেশ অনুযায়ী প্রয়োজন হলে।</li>
+        </ul>
+      </section>
+
+      <section id="anumoti">
+        <h2>৪. অ্যাপের অনুমতি</h2>
+        <p>অ্যাপ কয়েকটি ফিচারের জন্য আপনার ফোনের অনুমতি চাইতে পারে। অনুমতি না দিলে শুধু সংশ্লিষ্ট ফিচারটি কাজ করবে না।</p>
+        <ul>
+          <li><b>ইন্টারনেট:</b> পণ্য, অর্ডার ও ওয়ালেটের তথ্য আনার জন্য।</li>
+          <li><b>গ্যালারি বা স্টোরেজ:</b> পণ্যের ছবি আপনার ফোনে সেভ করার জন্য।</li>
+          <li><b>নোটিফিকেশন:</b> অর্ডারের অবস্থা ও নোটিশের খবর পাঠানোর জন্য।</li>
+        </ul>
+      </section>
+
+      <section id="surokkha">
+        <h2>৫. তথ্যের নিরাপত্তা ও সংরক্ষণ</h2>
+        <p>আপনার তথ্য অননুমোদিত প্রবেশ থেকে রক্ষা করার জন্য আমরা যুক্তিসংগত ব্যবস্থা নিই। তবু ইন্টারনেটের মাধ্যমে কোনো তথ্য পাঠানো শতভাগ নিরাপদ হতে পারে না, তাই পাসওয়ার্ড অন্য কাউকে দেবেন না।</p>
+        <p>আপনার অ্যাকাউন্ট সক্রিয় থাকা পর্যন্ত এবং অর্ডার, লেনদেন ও হিসাবের প্রয়োজনে যতদিন লাগে, ততদিন আমরা তথ্য সংরক্ষণ করি। আইনের কারণে কিছু হিসাব আরও বেশি সময় রাখতে হতে পারে।</p>
+      </section>
+
+      <section id="odhikar">
+        <h2>৬. আপনার অধিকার</h2>
+        <ul>
+          <li>আপনার দেওয়া তথ্য দেখতে চাইতে পারেন।</li>
+          <li>ভুল বা পুরনো তথ্য ঠিক করতে বলতে পারেন।</li>
+          <li>অ্যাকাউন্ট ও তথ্য মুছে ফেলার অনুরোধ করতে পারেন।</li>
+          <li>নোটিফিকেশন ফোনের সেটিংস থেকে বন্ধ করতে পারেন।</li>
+        </ul>
+        <p class="note">অনুরোধ করতে নিচের যোগাযোগ মাধ্যমে লিখুন। অর্ডার, লেনদেন বা আইনি হিসাবের জন্য যে তথ্য রাখা বাধ্যতামূলক, তা মুছে ফেলা নাও যেতে পারে।</p>
+      </section>
+
+      <section id="customer">
+        <h2>৭. কাস্টমারের তথ্য নিয়ে আপনার দায়িত্ব</h2>
+        <p>অর্ডার করার সময় আপনি আপনার কাস্টমারের নাম, ফোন ও ঠিকানা দেন। এই তথ্য শুধু ডেলিভারির কাজে ব্যবহার করুন। অন্য কোনো উদ্দেশ্যে ব্যবহার বা কারও কাছে শেয়ার করবেন না। আমরাও এই তথ্য শুধু ডেলিভারির জন্য ব্যবহার করি।</p>
+      </section>
+
+      <section id="poriborton">
+        <h2>৮. নীতির পরিবর্তন</h2>
+        <p>আমরা প্রয়োজনে এই নীতি বদলাতে পারি। বড় কোনো পরিবর্তন হলে অ্যাপের নোটিশ ট্যাবে বা এই পাতায় জানিয়ে দেওয়া হবে। পাতার ওপরে “সর্বশেষ হালনাগাদ” তারিখ দেখে নিতে পারেন।</p>
+      </section>
+
+      <section id="pv-jogajog-text">
+        <h2>৯. যোগাযোগ</h2>
+        <p>গোপনীয়তা নিয়ে কোনো প্রশ্ন বা অনুরোধ থাকলে নিচের যেকোনো মাধ্যমে আমাদের জানান।</p>
+      </section>
+    </article>
+  </div>
+
+  <div class="contact" id="pv-jogajog">
+    <div>
+      <h2>প্রশ্ন আছে?</h2>
+      <p>আপনার তথ্য নিয়ে যেকোনো প্রশ্ন বা অনুরোধ সরাসরি লিখুন। আমরা সাহায্য করব।</p>
+    </div>
+    <div class="links">
+      <a href="https://wa.me/8801863709122" target="_blank" rel="noopener">WhatsApp <small>+৮৮০ ১৮৬৩-৭০৯১২২</small></a>
+      <a href="https://t.me/dropdoor" target="_blank" rel="noopener">Telegram <small>@dropdoor</small></a>
+      <a href="https://facebook.com/dropdoor" target="_blank" rel="noopener">Facebook <small>facebook.com/dropdoor</small></a>
+    </div>
+  </div>
+</main>
+
+<div class="wrap">
+  <footer>
+    <span><b>DropDoor</b> · আপনার অনলাইন ব্যবসার বিশ্বস্ত সঙ্গী</span>
+    <span><a href="#/">হোম</a> · © <span class="yr">২০২৬</span> DropDoor</span>
+  </footer>
+</div>
+
 </div>
 
 <script>
@@ -376,7 +552,7 @@ const $ = id => document.getElementById(id);
 
 // the delivery charge list follows FEES
 document.querySelectorAll("[data-fee]").forEach(e => { e.textContent = tk(FEES[e.dataset.fee]); });
-try { $("yr").textContent = bn(new Date().getFullYear()).replace(",", ""); } catch (e) {}
+try { const y = bn(new Date().getFullYear()).replace(",", ""); document.querySelectorAll(".yr").forEach(e => { e.textContent = y; }); } catch (e) {}
 
 function calc() {
   const sell = +$("sell").value;
@@ -392,6 +568,29 @@ function calc() {
 }
 $("calc").addEventListener("input", calc);
 calc();
+
+// ---- tiny hash router: index.html -> home, index.html#/privacy -> privacy page ----
+const HOME_TITLE = "DropDoor – পণ্য আমাদের, লাভ আপনার";
+const PRIV_TITLE = "গোপনীয়তা নীতি – DropDoor";
+function route() {
+  const priv = location.hash === "#/privacy";
+  $("view-home").hidden = priv;
+  $("view-privacy").hidden = !priv;
+  document.title = priv ? PRIV_TITLE : HOME_TITLE;
+  const h = location.hash;
+  if (priv || !h || h === "#/") { window.scrollTo(0, 0); return; }
+  const t = document.getElementById(decodeURIComponent(h.slice(1)));
+  if (t) t.scrollIntoView();
+}
+window.addEventListener("hashchange", route);
+route();
+
+// privacy table of contents: scroll without changing the URL hash
+document.querySelectorAll(".toc a").forEach(a => a.addEventListener("click", e => {
+  e.preventDefault();
+  const t = document.getElementById(a.getAttribute("href").slice(1));
+  if (t) t.scrollIntoView();
+}));
 </script>
 </body>
 </html>
