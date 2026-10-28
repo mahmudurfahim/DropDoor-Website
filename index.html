@@ -178,6 +178,16 @@ article li{position:relative;padding:8px 0 8px 30px;color:var(--ink2)}
 article li::before{content:"";position:absolute;left:3px;top:17px;width:13px;height:7px;border-left:3px solid var(--emerald);border-bottom:3px solid var(--emerald);transform:rotate(-45deg)}
 article li b{color:var(--ink);font-weight:700}
 .note{margin-top:14px;background:#fff;border-left:5px solid var(--emerald);border-radius:8px;padding:14px 18px;color:var(--ink);font-weight:500}
+.idcard{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:22px 24px;margin-bottom:34px}
+.idcard h2{font-size:clamp(20px,2.6vw,24px);font-weight:800}
+.idcard p{margin-top:8px;color:var(--ink2)}
+.idcard p b{color:var(--ink)}
+.idcard dl{margin:14px 0 0}
+.idcard dl div{display:grid;grid-template-columns:170px minmax(0,1fr);gap:12px;padding:9px 0;border-top:1px solid var(--line)}
+.idcard dt{font-weight:700;color:var(--ink)}
+.idcard dd{margin:0;color:var(--ink2);word-break:break-word}
+.fill{background:#FFF1B8;color:#6B4E00;font-weight:700;padding:0 6px;border-radius:4px}
+@media(max-width:600px){.idcard dl div{grid-template-columns:minmax(0,1fr);gap:2px}}
 #view-privacy .contact{margin-top:56px;border-radius:28px;padding:clamp(26px,4vw,44px);gap:28px}
 #view-privacy .contact h2{font-size:clamp(24px,3.4vw,34px)}
 #view-privacy .contact p{margin-top:10px}
@@ -204,7 +214,7 @@ article li b{color:var(--ink);font-weight:700}
 <header class="hero">
   <div class="wrap">
     <div class="bar">
-      <a class="brand" href="#/" aria-label="DropDoor হোম">
+      <a class="brand" href="/" data-nav="home" aria-label="DropDoor হোম">
         <svg viewBox="28 28 52 54" aria-hidden="true"><path d="M54 28l26 13-26 13-26-13z" fill="#fff"/><path d="M28 43l24 12v27L28 70z" fill="#D1FAE5"/><path d="M56 55l24-12v27L56 82z" fill="#A5F3FC"/></svg>
         DropDoor
       </a>
@@ -396,7 +406,7 @@ article li b{color:var(--ink);font-weight:700}
 <div class="wrap">
   <footer>
     <span><b>DropDoor</b> · আপনার অনলাইন ব্যবসার বিশ্বস্ত সঙ্গী</span>
-    <span><a href="#/privacy">গোপনীয়তা নীতি</a> · © <span class="yr">২০২৬</span> DropDoor</span>
+    <span><a href="/privacy" data-nav="privacy">গোপনীয়তা নীতি</a> · © <span class="yr">২০২৬</span> DropDoor</span>
   </footer>
 </div>
 
@@ -408,11 +418,11 @@ article li b{color:var(--ink);font-weight:700}
 <header class="hero">
   <div class="wrap">
     <div class="bar">
-      <a class="brand" href="#/" aria-label="DropDoor হোম">
+      <a class="brand" href="/" data-nav="home" aria-label="DropDoor হোম">
         <svg viewBox="28 28 52 54" aria-hidden="true"><path d="M54 28l26 13-26 13-26-13z" fill="#fff"/><path d="M28 43l24 12v27L28 70z" fill="#D1FAE5"/><path d="M56 55l24-12v27L56 82z" fill="#A5F3FC"/></svg>
         DropDoor
       </a>
-      <a class="back" href="#/">← হোমে ফিরুন</a>
+      <a class="back" href="/" data-nav="home">← হোমে ফিরুন</a>
     </div>
     <h1>গোপনীয়তা নীতি</h1>
     <p class="lead">আপনি DropDoor অ্যাপ ও ওয়েবসাইট ব্যবহার করলে আমরা কোন তথ্য নিই, কেন নিই আর কীভাবে সুরক্ষিত রাখি, তা এখানে সহজ ভাষায় লেখা আছে।</p>
@@ -438,6 +448,19 @@ article li b{color:var(--ink);font-weight:700}
     </nav>
 
     <article>
+      <div class="idcard" id="porichoy">
+        <h2>এই নীতি কোন অ্যাপ ও কার জন্য</h2>
+        <p>এই গোপনীয়তা নীতি Google Play Store-এ প্রকাশিত <b>DropDoor</b> অ্যাপ এবং এই ওয়েবসাইটের জন্য প্রযোজ্য। এই নীতিতে “আমরা” বলতে নিচে উল্লেখ করা ডেভেলপার বা প্রতিষ্ঠানকে বোঝানো হয়েছে।</p>
+        <dl>
+          <div><dt>অ্যাপের নাম</dt><dd>DropDoor</dd></div>
+          <div><dt>প্যাকেজ নাম</dt><dd><span class="fill">[dropdoor.app]</span></dd></div>
+          <div><dt>ডেভেলপার / প্রতিষ্ঠান</dt><dd><span class="fill">[Mahmudur Rahman Chowdhury]</span></dd></div>
+          <div><dt>ঠিকানা</dt><dd><span class="fill">[Bashabo, Sabujbag, Dhaka]</span></dd></div>
+          <div><dt>যোগাযোগের ইমেইল</dt><dd><a href="mailto:[EMAIL]"><span class="mahmudurchowdhuryfahim@gmail.com">[EMAIL]</span></a></dd></div>
+          <div><dt>ওয়েবসাইট</dt><dd><a href="https://dropdoor.com.bd" target="_blank" rel="noopener">dropdoor.com.bd</a></dd></div>
+        </dl>
+      </div>
+
       <section id="tothya">
         <h2>১. আমরা কোন তথ্য সংগ্রহ করি</h2>
         <p>DropDoor ব্যবহারের জন্য যতটুকু তথ্য দরকার, আমরা ততটুকুই নিই।</p>
@@ -499,7 +522,7 @@ article li b{color:var(--ink);font-weight:700}
           <li>অ্যাকাউন্ট ও তথ্য মুছে ফেলার অনুরোধ করতে পারেন।</li>
           <li>নোটিফিকেশন ফোনের সেটিংস থেকে বন্ধ করতে পারেন।</li>
         </ul>
-        <p class="note">অনুরোধ করতে নিচের যোগাযোগ মাধ্যমে লিখুন। অর্ডার, লেনদেন বা আইনি হিসাবের জন্য যে তথ্য রাখা বাধ্যতামূলক, তা মুছে ফেলা নাও যেতে পারে।</p>
+        <p class="note"><b>অ্যাকাউন্ট ও তথ্য মুছতে:</b> <span class="fill">[EMAIL]</span> ঠিকানায় ইমেইল করুন, বিষয়ে “Account Deletion” লিখুন এবং আপনার নিবন্ধিত ফোন নম্বর দিন। পরিচয় যাচাই করে আমরা যুক্তিসংগত সময়ের মধ্যে আপনার অ্যাকাউন্ট ও সংশ্লিষ্ট তথ্য মুছে দেব। তবে অর্ডার, লেনদেন বা আইনি হিসাবের জন্য যে তথ্য রাখা বাধ্যতামূলক, তা মুছে ফেলা নাও যেতে পারে।</p>
       </section>
 
       <section id="customer">
@@ -514,7 +537,7 @@ article li b{color:var(--ink);font-weight:700}
 
       <section id="pv-jogajog-text">
         <h2>৯. যোগাযোগ</h2>
-        <p>গোপনীয়তা নিয়ে কোনো প্রশ্ন বা অনুরোধ থাকলে নিচের যেকোনো মাধ্যমে আমাদের জানান।</p>
+        <p>গোপনীয়তা নিয়ে কোনো প্রশ্ন বা অনুরোধ থাকলে <span class="fill">[EMAIL]</span> ঠিকানায় ইমেইল করুন, অথবা নিচের যেকোনো মাধ্যমে আমাদের জানান। অ্যাপ: DropDoor। ডেভেলপার: <span class="fill">[DEVELOPER NAME]</span>।</p>
       </section>
     </article>
   </div>
@@ -527,6 +550,7 @@ article li b{color:var(--ink);font-weight:700}
     <div class="links">
       <a href="https://wa.me/8801863709122" target="_blank" rel="noopener">WhatsApp <small>+৮৮০ ১৮৬৩-৭০৯১২২</small></a>
       <a href="https://t.me/dropdoor" target="_blank" rel="noopener">Telegram <small>@dropdoor</small></a>
+      <a href="mailto:[EMAIL]">Email <small>[EMAIL]</small></a>
       <a href="https://facebook.com/dropdoor" target="_blank" rel="noopener">Facebook <small>facebook.com/dropdoor</small></a>
     </div>
   </div>
@@ -535,7 +559,7 @@ article li b{color:var(--ink);font-weight:700}
 <div class="wrap">
   <footer>
     <span><b>DropDoor</b> · আপনার অনলাইন ব্যবসার বিশ্বস্ত সঙ্গী</span>
-    <span><a href="#/">হোম</a> · © <span class="yr">২০২৬</span> DropDoor</span>
+    <span><a href="/" data-nav="home">হোম</a> · © <span class="yr">২০২৬</span> DropDoor · <span class="fill">[DEVELOPER NAME]</span></span>
   </footer>
 </div>
 
@@ -572,8 +596,10 @@ calc();
 // ---- tiny hash router: index.html -> home, index.html#/privacy -> privacy page ----
 const HOME_TITLE = "DropDoor – পণ্য আমাদের, লাভ আপনার";
 const PRIV_TITLE = "গোপনীয়তা নীতি – DropDoor";
+const isFile = location.protocol === "file:";
+function isPrivacy() { return /\/privacy\/?$/.test(location.pathname) || location.hash === "#/privacy"; }
 function route() {
-  const priv = location.hash === "#/privacy";
+  const priv = isPrivacy();
   $("view-home").hidden = priv;
   $("view-privacy").hidden = !priv;
   document.title = priv ? PRIV_TITLE : HOME_TITLE;
@@ -582,7 +608,18 @@ function route() {
   const t = document.getElementById(decodeURIComponent(h.slice(1)));
   if (t) t.scrollIntoView();
 }
+function go(to) {
+  if (isFile) { location.hash = to === "privacy" ? "#/privacy" : "#/"; return; }
+  history.pushState({}, "", to === "privacy" ? "/privacy" : "/");
+  route();
+}
+document.querySelectorAll("[data-nav]").forEach(a => a.addEventListener("click", e => {
+  if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+  e.preventDefault();
+  go(a.dataset.nav);
+}));
 window.addEventListener("hashchange", route);
+window.addEventListener("popstate", route);
 route();
 
 // privacy table of contents: scroll without changing the URL hash
