@@ -149,11 +149,11 @@ footer{padding:44px 0 40px;color:var(--ink2);font-size:15px;display:flex;flex-wr
 footer b{color:var(--ink)}
 footer a{color:var(--ink2);font-weight:600}
 
-/* ---------- privacy view ---------- */
-#view-privacy .hero{padding-bottom:64px}
-#view-privacy .hero h1{font-size:clamp(34px,5.4vw,60px);line-height:1.15;margin-top:34px}
-#view-privacy .hero .lead{margin-top:16px;max-width:36em}
-#view-privacy .hero .upd{margin-top:14px;font-size:14px;color:#BFEFE3}
+/* ---------- sub pages (privacy / terms / data deletion) ---------- */
+.sub .hero{padding-bottom:64px}
+.sub .hero h1{font-size:clamp(34px,5.4vw,60px);line-height:1.15;margin-top:34px}
+.sub .hero .lead{margin-top:16px;max-width:36em}
+.sub .hero .upd{margin-top:14px;font-size:14px;color:#BFEFE3}
 .back{margin-left:auto;color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:6px 14px;border-radius:99px;border:2px solid rgba(255,255,255,.6)}
 .back:hover{background:rgba(255,255,255,.16)}
 .doc{display:grid;grid-template-columns:240px minmax(0,1fr);gap:56px;margin-top:56px;align-items:start}
@@ -167,12 +167,14 @@ footer a{color:var(--ink2);font-weight:600}
 article section{padding:0 0 34px;margin-bottom:34px;border-bottom:2px solid var(--line);line-height:1.75}
 article section:last-child{border-bottom:0;margin-bottom:0}
 article h2{font-size:clamp(22px,3vw,28px);font-weight:800}
+article h3{font-size:18px;font-weight:700;margin-top:18px}
 article p{margin-top:10px;color:var(--ink2)}
 article ul{margin:12px 0 0;padding:0;list-style:none}
 article li{position:relative;padding:8px 0 8px 30px;color:var(--ink2)}
 article li::before{content:"";position:absolute;left:3px;top:17px;width:13px;height:7px;border-left:3px solid var(--emerald);border-bottom:3px solid var(--emerald);transform:rotate(-45deg)}
 article li b{color:var(--ink);font-weight:700}
-.note{margin-top:14px;background:#fff;border-left:5px solid var(--emerald);border-radius:8px;padding:14px 18px;color:var(--ink);font-weight:500}
+article .steps{margin-top:18px}
+.note{margin-top:14px;background:#fff;border-left:5px solid var(--emerald);border-radius:8px;padding:14px 18px;color:var(--ink)!important;font-weight:500}
 .idcard{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:22px 24px;margin-bottom:34px}
 .idcard h2{font-size:clamp(20px,2.6vw,24px);font-weight:800}
 .idcard p{margin-top:8px;color:var(--ink2)}
@@ -181,10 +183,11 @@ article li b{color:var(--ink);font-weight:700}
 .idcard dl div{display:grid;grid-template-columns:170px minmax(0,1fr);gap:12px;padding:9px 0;border-top:1px solid var(--line)}
 .idcard dt{font-weight:700;color:var(--ink)}
 .idcard dd{margin:0;color:var(--ink2);word-break:break-word}
+.mailbtn{margin-top:16px}
 @media(max-width:600px){.idcard dl div{grid-template-columns:minmax(0,1fr);gap:2px}}
-#view-privacy .contact{margin-top:56px;border-radius:28px;padding:clamp(26px,4vw,44px);gap:28px}
-#view-privacy .contact h2{font-size:clamp(24px,3.4vw,34px)}
-#view-privacy .contact p{margin-top:10px}
+.sub .contact{margin-top:56px;border-radius:28px;padding:clamp(26px,4vw,44px);gap:28px}
+.sub .contact h2{font-size:clamp(24px,3.4vw,34px)}
+.sub .contact p{margin-top:10px}
 
 @media(max-width:900px){
   .hero-grid,.flow,.rules,.contact,.doc{grid-template-columns:minmax(0,1fr)}
@@ -202,7 +205,7 @@ article li b{color:var(--ink);font-weight:700}
 </head>
 <body>
 
-<!-- ================= HOME ================= -->
+<!-- ================= HOME ( / ) ================= -->
 <div id="view-home">
 
 <header class="hero">
@@ -375,6 +378,7 @@ article li b{color:var(--ink);font-weight:700}
       <details><summary>অর্ডার ফেরত এলে কী হয়?</summary><p>ফেরত অর্ডারে লাভ যোগ হয় না এবং সেই অর্ডারের ডেলিভারি চার্জ আপনার ব্যালেন্স থেকে কাটা হয়।</p></details>
       <details><summary>টাকা তুলব কীভাবে?</summary><p>অ্যাপে bKash, Nagad বা ব্যাংক অ্যাকাউন্ট যোগ করুন (পাঁচটি পর্যন্ত)। ওয়ালেট থেকে উত্তোলনের অনুরোধ পাঠালে অ্যাডমিন যাচাই করে টাকা পাঠান। ন্যূনতম ৳৫০০।</p></details>
       <details><summary>অ্যাপ কোথা থেকে পাব?</summary><p>নিচের WhatsApp বা Telegram-এ জানান। আমরা অ্যাপের লিংক পাঠিয়ে দেব।</p></details>
+      <details><summary>আমার অ্যাকাউন্ট ও তথ্য মুছে ফেলতে চাইলে?</summary><p>আমাদের <a href="/data-deletion" data-nav="deletion">তথ্য মুছে ফেলার নির্দেশিকা</a> পাতায় ধাপগুলো দেওয়া আছে।</p></details>
     </div>
   </div>
 </section>
@@ -400,14 +404,14 @@ article li b{color:var(--ink);font-weight:700}
 <div class="wrap">
   <footer>
     <span><b>DropDoor</b> · আপনার অনলাইন ব্যবসার বিশ্বস্ত সঙ্গী</span>
-    <span><a href="/privacy" data-nav="privacy">গোপনীয়তা নীতি</a> · © <span class="yr">২০২৬</span> DropDoor</span>
+    <span><a href="/privacy" data-nav="privacy">গোপনীয়তা নীতি</a> · <a href="/terms" data-nav="terms">সেবার শর্তাবলি</a> · <a href="/data-deletion" data-nav="deletion">তথ্য মুছে ফেলা</a> · © <span class="yr">২০২৬</span> DropDoor</span>
   </footer>
 </div>
 
 </div>
 
-<!-- ================= PRIVACY ================= -->
-<div id="view-privacy" hidden>
+<!-- ================= PRIVACY ( /privacy ) ================= -->
+<div id="view-privacy" class="sub" hidden>
 
 <header class="hero">
   <div class="wrap">
@@ -420,7 +424,7 @@ article li b{color:var(--ink);font-weight:700}
     </div>
     <h1>গোপনীয়তা নীতি</h1>
     <p class="lead">আপনি DropDoor অ্যাপ ও ওয়েবসাইট ব্যবহার করলে আমরা কোন তথ্য নিই, কেন নিই আর কীভাবে সুরক্ষিত রাখি, তা এখানে সহজ ভাষায় লেখা আছে।</p>
-    <p class="upd">সর্বশেষ হালনাগাদ: ২৮ অক্টোবর ২০২৬</p>
+    <p class="upd">সর্বশেষ হালনাগাদ: ১৯ নভেম্বর ২০২৬</p>
   </div>
 </header>
 
@@ -429,20 +433,22 @@ article li b{color:var(--ink);font-weight:700}
     <nav class="toc" aria-label="সূচিপত্র">
       <h2>এই পাতায় যা আছে</h2>
       <ol>
-        <li><a href="#tothya">কোন তথ্য সংগ্রহ করি</a></li>
-        <li><a href="#byabohar">তথ্য কেন ব্যবহার করি</a></li>
-        <li><a href="#shayor">কার সাথে তথ্য শেয়ার হয়</a></li>
-        <li><a href="#anumoti">অ্যাপের অনুমতি</a></li>
-        <li><a href="#surokkha">তথ্যের নিরাপত্তা ও সংরক্ষণ</a></li>
-        <li><a href="#odhikar">আপনার অধিকার</a></li>
-        <li><a href="#customer">কাস্টমারের তথ্য নিয়ে আপনার দায়িত্ব</a></li>
-        <li><a href="#poriborton">নীতির পরিবর্তন</a></li>
-        <li><a href="#pv-jogajog-text">যোগাযোগ</a></li>
+        <li><a href="#p-tothya">কোন তথ্য সংগ্রহ করি</a></li>
+        <li><a href="#p-meta">Meta (Facebook) SDK</a></li>
+        <li><a href="#p-byabohar">তথ্য কেন ব্যবহার করি</a></li>
+        <li><a href="#p-shayor">কার সাথে তথ্য শেয়ার হয়</a></li>
+        <li><a href="#p-anumoti">অ্যাপের অনুমতি</a></li>
+        <li><a href="#p-surokkha">তথ্যের নিরাপত্তা ও সংরক্ষণ</a></li>
+        <li><a href="#p-odhikar">আপনার অধিকার ও তথ্য মোছা</a></li>
+        <li><a href="#p-customer">কাস্টমারের তথ্য নিয়ে আপনার দায়িত্ব</a></li>
+        <li><a href="#p-shishu">শিশুদের তথ্য</a></li>
+        <li><a href="#p-poriborton">নীতির পরিবর্তন</a></li>
+        <li><a href="#p-jogajog-text">যোগাযোগ</a></li>
       </ol>
     </nav>
 
     <article>
-      <div class="idcard" id="porichoy">
+      <div class="idcard" id="p-porichoy">
         <h2>এই নীতি কোন অ্যাপ ও কার জন্য</h2>
         <p>এই গোপনীয়তা নীতি Google Play Store-এ প্রকাশিত <b>DropDoor</b> অ্যাপ এবং এই ওয়েবসাইটের জন্য প্রযোজ্য। এই নীতিতে “আমরা” বলতে নিচে উল্লেখ করা ডেভেলপার বা প্রতিষ্ঠানকে বোঝানো হয়েছে।</p>
         <dl>
@@ -455,7 +461,7 @@ article li b{color:var(--ink);font-weight:700}
         </dl>
       </div>
 
-      <section id="tothya">
+      <section id="p-tothya">
         <h2>১. আমরা কোন তথ্য সংগ্রহ করি</h2>
         <p>DropDoor ব্যবহারের জন্য যতটুকু তথ্য দরকার, আমরা ততটুকুই নিই।</p>
         <ul>
@@ -466,77 +472,99 @@ article li b{color:var(--ink);font-weight:700}
           <li><b>ওয়ালেট ও পেমেন্টের তথ্য:</b> লাভের হিসাব, লেনদেনের ইতিহাস, উত্তোলনের অনুরোধ এবং উত্তোলনের জন্য যোগ করা bKash, Nagad বা ব্যাংক অ্যাকাউন্টের তথ্য।</li>
           <li><b>অ্যাপ ব্যবহারের তথ্য:</b> পছন্দের তালিকা, রিপোর্ট দেখার তথ্য এবং অ্যাপ ঠিকমতো চালানোর জন্য প্রয়োজনীয় প্রযুক্তিগত তথ্য, যেমন ডিভাইসের ধরন ও অ্যাপের সংস্করণ।</li>
           <li><b>আপনার পাঠানো বার্তা:</b> WhatsApp, Telegram বা ফেসবুকে আমাদের লিখলে আপনার নাম, নম্বর ও বার্তা।</li>
+          <li><b>তৃতীয় পক্ষের SDK থেকে স্বয়ংক্রিয় তথ্য:</b> অ্যাপে ব্যবহৃত Meta SDK-এর মাধ্যমে সংগৃহীত তথ্য। বিস্তারিত পরের অংশে দেওয়া আছে।</li>
         </ul>
       </section>
 
-      <section id="byabohar">
-        <h2>২. তথ্য কেন ব্যবহার করি</h2>
+      <section id="p-meta">
+        <h2>২. Meta (Facebook) SDK ও তার তথ্য সংগ্রহ</h2>
+        <p>DropDoor অ্যাপে Meta Platforms, Inc.-এর Facebook SDK for Android ব্যবহার করা হয়। এটি অ্যাপ ইনস্টলের হিসাব, অ্যাপ ব্যবহারের পরিসংখ্যান এবং Facebook বিজ্ঞাপনের কার্যকারিতা মাপতে সাহায্য করে। অ্যাপ চালু থাকলে এই SDK আপনার ডিভাইস থেকে নিচের তথ্য স্বয়ংক্রিয়ভাবে সংগ্রহ করে Meta-র কাছে পাঠাতে পারে।</p>
+        <ul>
+          <li><b>ডিভাইস ও অ্যাপের তথ্য:</b> ডিভাইসের মডেল, অপারেটিং সিস্টেমের সংস্করণ, অ্যাপের সংস্করণ, ভাষা, টাইম জোন ও নেটওয়ার্ক অপারেটর।</li>
+          <li><b>শনাক্তকারী:</b> Android Advertising ID (GAID) এবং Meta-র তৈরি করা অ্যাপ-সংক্রান্ত আইডি।</li>
+          <li><b>আইপি অ্যাড্রেস:</b> ইন্টারনেট সংযোগের সময় সার্ভারে পৌঁছানো আইপি অ্যাড্রেস।</li>
+          <li><b>অ্যাপ ইভেন্ট:</b> অ্যাপ ইনস্টল, অ্যাপ খোলা, অ্যাপে কাটানো সময় এবং কিছু নির্দিষ্ট কার্যক্রম, যেমন অ্যাকাউন্ট খোলা বা অর্ডার সম্পন্ন হওয়া।</li>
+        </ul>
+        <p>এই তথ্য Meta-র নিজস্ব গোপনীয়তা নীতি অনুযায়ী Meta ব্যবহার করে। এর মধ্যে বিজ্ঞাপন বিশ্লেষণ, বিজ্ঞাপনের ফলাফল মাপা, নিরাপত্তা এবং Meta-র সেবা উন্নত করা অন্তর্ভুক্ত থাকতে পারে। আমরা SDK-তে আপনার পাসওয়ার্ড, ওয়ালেটের ব্যালেন্স, পেমেন্ট অ্যাকাউন্টের নম্বর বা কাস্টমারের নাম, ফোন ও ঠিকানা পাঠাই না।</p>
+        <p class="note"><b>আপনার নিয়ন্ত্রণ:</b> ফোনের Settings → Google → Ads থেকে Advertising ID রিসেট বা বিজ্ঞাপন ব্যক্তিগতকরণ বন্ধ করতে পারেন। Facebook অ্যাকাউন্ট থাকলে Facebook-এর Settings-এ “Your activity outside Meta technologies” অংশ থেকে অন্য অ্যাপ থেকে আসা তথ্য দেখতে, মুছতে বা আলাদা করতে পারেন। Meta কীভাবে তথ্য ব্যবহার করে, তা জানতে দেখুন <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta-র গোপনীয়তা নীতি</a>।</p>
+      </section>
+
+      <section id="p-byabohar">
+        <h2>৩. তথ্য কেন ব্যবহার করি</h2>
         <ul>
           <li>আপনার অ্যাকাউন্ট খোলা, যাচাই করা ও অনুমোদন দেওয়ার জন্য।</li>
           <li>অর্ডার নিশ্চিত করা, পার্সেল প্যাকেজিং ও কুরিয়ারে পাঠানো এবং কাস্টমারের কাছে পৌঁছে দেওয়ার জন্য।</li>
           <li>ক্যাশ অন ডেলিভারির টাকা আদায় করে আপনার ওয়ালেটে লাভ যোগ করা এবং আপনার উত্তোলনের অনুরোধ যাচাই করে টাকা পাঠানোর জন্য।</li>
           <li>ফেরত বা বাতিল অর্ডারের হিসাব মেলানোর জন্য।</li>
           <li>নতুন পণ্য, নিয়ম বা চার্জ বদলের খবর নোটিশ আকারে জানানোর জন্য।</li>
+          <li>অ্যাপ ইনস্টল ও ব্যবহারের পরিসংখ্যান বোঝা এবং আমাদের বিজ্ঞাপনের ফলাফল মাপার জন্য।</li>
           <li>জালিয়াতি ও অপব্যবহার ঠেকানো এবং সেবার মান উন্নত করার জন্য।</li>
         </ul>
       </section>
 
-      <section id="shayor">
-        <h2>৩. কার সাথে তথ্য শেয়ার হয়</h2>
+      <section id="p-shayor">
+        <h2>৪. কার সাথে তথ্য শেয়ার হয়</h2>
         <p>আমরা আপনার ব্যক্তিগত তথ্য বিক্রি করি না। সেবা দেওয়ার জন্য যতটুকু দরকার, শুধু ততটুকু তথ্য নিচের পক্ষগুলোর সাথে শেয়ার হতে পারে।</p>
         <ul>
           <li><b>কুরিয়ার সেবা:</b> পার্সেল পৌঁছানোর জন্য কাস্টমারের নাম, ফোন নম্বর ও ঠিকানা।</li>
           <li><b>এসএমএস ও পেমেন্ট সেবাদাতা:</b> ভেরিফিকেশন কোড পাঠানো এবং bKash, Nagad বা ব্যাংকের মাধ্যমে টাকা পাঠানোর জন্য।</li>
+          <li><b>Meta Platforms, Inc.:</b> Facebook SDK-এর মাধ্যমে, ওপরের দ্বিতীয় অংশে বলা তথ্য।</li>
           <li><b>প্রযুক্তি সেবাদাতা:</b> অ্যাপ ও ওয়েবসাইট চালানোর জন্য হোস্টিং ও সার্ভার সেবা।</li>
           <li><b>আইনি প্রয়োজনে:</b> আইন বা আদালতের নির্দেশ অনুযায়ী প্রয়োজন হলে।</li>
         </ul>
       </section>
 
-      <section id="anumoti">
-        <h2>৪. অ্যাপের অনুমতি</h2>
+      <section id="p-anumoti">
+        <h2>৫. অ্যাপের অনুমতি</h2>
         <p>অ্যাপ কয়েকটি ফিচারের জন্য আপনার ফোনের অনুমতি চাইতে পারে। অনুমতি না দিলে শুধু সংশ্লিষ্ট ফিচারটি কাজ করবে না।</p>
         <ul>
           <li><b>ইন্টারনেট:</b> পণ্য, অর্ডার ও ওয়ালেটের তথ্য আনার জন্য।</li>
           <li><b>গ্যালারি বা স্টোরেজ:</b> পণ্যের ছবি আপনার ফোনে সেভ করার জন্য।</li>
           <li><b>নোটিফিকেশন:</b> অর্ডারের অবস্থা ও নোটিশের খবর পাঠানোর জন্য।</li>
+          <li><b>বিজ্ঞাপন আইডি:</b> Meta SDK অ্যাপ ইনস্টল ও ব্যবহারের হিসাব রাখতে Advertising ID পড়ে। ফোনের সেটিংস থেকে এটি বন্ধ বা রিসেট করা যায়।</li>
         </ul>
       </section>
 
-      <section id="surokkha">
-        <h2>৫. তথ্যের নিরাপত্তা ও সংরক্ষণ</h2>
+      <section id="p-surokkha">
+        <h2>৬. তথ্যের নিরাপত্তা ও সংরক্ষণ</h2>
         <p>আপনার তথ্য অননুমোদিত প্রবেশ থেকে রক্ষা করার জন্য আমরা যুক্তিসংগত ব্যবস্থা নিই। তবু ইন্টারনেটের মাধ্যমে কোনো তথ্য পাঠানো শতভাগ নিরাপদ হতে পারে না, তাই পাসওয়ার্ড অন্য কাউকে দেবেন না।</p>
         <p>আপনার অ্যাকাউন্ট সক্রিয় থাকা পর্যন্ত এবং অর্ডার, লেনদেন ও হিসাবের প্রয়োজনে যতদিন লাগে, ততদিন আমরা তথ্য সংরক্ষণ করি। আইনের কারণে কিছু হিসাব আরও বেশি সময় রাখতে হতে পারে।</p>
       </section>
 
-      <section id="odhikar">
-        <h2>৬. আপনার অধিকার</h2>
+      <section id="p-odhikar">
+        <h2>৭. আপনার অধিকার ও তথ্য মোছা</h2>
         <ul>
           <li>আপনার দেওয়া তথ্য দেখতে চাইতে পারেন।</li>
           <li>ভুল বা পুরনো তথ্য ঠিক করতে বলতে পারেন।</li>
           <li>অ্যাকাউন্ট ও তথ্য মুছে ফেলার অনুরোধ করতে পারেন।</li>
           <li>নোটিফিকেশন ফোনের সেটিংস থেকে বন্ধ করতে পারেন।</li>
         </ul>
-        <p class="note"><b>অ্যাকাউন্ট ও তথ্য মুছতে:</b> <a href="mailto:mahmudurchowdhuryfahim@gmail.com?subject=Account%20Deletion">mahmudurchowdhuryfahim@gmail.com</a> ঠিকানায় ইমেইল করুন, বিষয়ে “Account Deletion” লিখুন এবং আপনার নিবন্ধিত ফোন নম্বর দিন। পরিচয় যাচাই করে আমরা যুক্তিসংগত সময়ের মধ্যে আপনার অ্যাকাউন্ট ও সংশ্লিষ্ট তথ্য মুছে দেব। তবে অর্ডার, লেনদেন বা আইনি হিসাবের জন্য যে তথ্য রাখা বাধ্যতামূলক, তা মুছে ফেলা নাও যেতে পারে।</p>
+        <p class="note"><b>অ্যাকাউন্ট ও তথ্য মুছতে:</b> আমাদের <a href="/data-deletion" data-nav="deletion">তথ্য মুছে ফেলার নির্দেশিকা</a> পাতার ধাপ অনুসরণ করুন, অথবা সরাসরি <a href="mailto:mahmudurchowdhuryfahim@gmail.com?subject=Account%20Deletion">mahmudurchowdhuryfahim@gmail.com</a> ঠিকানায় “Account Deletion” বিষয়ে ইমেইল করুন।</p>
       </section>
 
-      <section id="customer">
-        <h2>৭. কাস্টমারের তথ্য নিয়ে আপনার দায়িত্ব</h2>
+      <section id="p-customer">
+        <h2>৮. কাস্টমারের তথ্য নিয়ে আপনার দায়িত্ব</h2>
         <p>অর্ডার করার সময় আপনি আপনার কাস্টমারের নাম, ফোন ও ঠিকানা দেন। এই তথ্য শুধু ডেলিভারির কাজে ব্যবহার করুন। অন্য কোনো উদ্দেশ্যে ব্যবহার বা কারও কাছে শেয়ার করবেন না। আমরাও এই তথ্য শুধু ডেলিভারির জন্য ব্যবহার করি।</p>
       </section>
 
-      <section id="poriborton">
-        <h2>৮. নীতির পরিবর্তন</h2>
+      <section id="p-shishu">
+        <h2>৯. শিশুদের তথ্য</h2>
+        <p>DropDoor ১৮ বছরের কম বয়সীদের জন্য তৈরি নয়। আমরা জেনেশুনে ১৮ বছরের কম বয়সী কারও তথ্য সংগ্রহ করি না। এমন কোনো তথ্য আমাদের কাছে এসে গেছে বলে জানতে পারলে আমরা তা মুছে ফেলব।</p>
+      </section>
+
+      <section id="p-poriborton">
+        <h2>১০. নীতির পরিবর্তন</h2>
         <p>আমরা প্রয়োজনে এই নীতি বদলাতে পারি। বড় কোনো পরিবর্তন হলে অ্যাপের নোটিশ ট্যাবে বা এই পাতায় জানিয়ে দেওয়া হবে। পাতার ওপরে “সর্বশেষ হালনাগাদ” তারিখ দেখে নিতে পারেন।</p>
       </section>
 
-      <section id="pv-jogajog-text">
-        <h2>৯. যোগাযোগ</h2>
+      <section id="p-jogajog-text">
+        <h2>১১. যোগাযোগ</h2>
         <p>গোপনীয়তা নিয়ে কোনো প্রশ্ন বা অনুরোধ থাকলে <a href="mailto:mahmudurchowdhuryfahim@gmail.com">mahmudurchowdhuryfahim@gmail.com</a> ঠিকানায় ইমেইল করুন, অথবা নিচের যেকোনো মাধ্যমে আমাদের জানান। অ্যাপ: DropDoor। ডেভেলপার: TechYard Bangladesh।</p>
       </section>
     </article>
   </div>
 
-  <div class="contact" id="pv-jogajog">
+  <div class="contact">
     <div>
       <h2>প্রশ্ন আছে?</h2>
       <p>আপনার তথ্য নিয়ে যেকোনো প্রশ্ন বা অনুরোধ সরাসরি লিখুন। আমরা সাহায্য করব।</p>
@@ -553,7 +581,307 @@ article li b{color:var(--ink);font-weight:700}
 <div class="wrap">
   <footer>
     <span><b>DropDoor</b> · আপনার অনলাইন ব্যবসার বিশ্বস্ত সঙ্গী</span>
-    <span><a href="/" data-nav="home">হোম</a> · © <span class="yr">২০২৬</span> DropDoor · TechYard Bangladesh</span>
+    <span><a href="/" data-nav="home">হোম</a> · <a href="/terms" data-nav="terms">সেবার শর্তাবলি</a> · <a href="/data-deletion" data-nav="deletion">তথ্য মুছে ফেলা</a> · © <span class="yr">২০২৬</span> DropDoor · TechYard Bangladesh</span>
+  </footer>
+</div>
+
+</div>
+
+<!-- ================= TERMS ( /terms ) ================= -->
+<div id="view-terms" class="sub" hidden>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="/" data-nav="home" aria-label="DropDoor হোম">
+        <svg viewBox="28 28 52 54" aria-hidden="true"><path d="M54 28l26 13-26 13-26-13z" fill="#fff"/><path d="M28 43l24 12v27L28 70z" fill="#D1FAE5"/><path d="M56 55l24-12v27L56 82z" fill="#A5F3FC"/></svg>
+        DropDoor
+      </a>
+      <a class="back" href="/" data-nav="home">← হোমে ফিরুন</a>
+    </div>
+    <h1>সেবার শর্তাবলি</h1>
+    <p class="lead">DropDoor অ্যাপ বা ওয়েবসাইট ব্যবহারের আগে এই শর্তগুলো পড়ে নিন। অ্যাকাউন্ট খুললে বা অ্যাপ ব্যবহার করলে ধরে নেওয়া হবে আপনি এগুলো মেনে নিয়েছেন।</p>
+    <p class="upd">সর্বশেষ হালনাগাদ: ১৯ নভেম্বর ২০২৬</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="doc">
+    <nav class="toc" aria-label="সূচিপত্র">
+      <h2>এই পাতায় যা আছে</h2>
+      <ol>
+        <li><a href="#t-porichoy">সেবার পরিচয়</a></li>
+        <li><a href="#t-account">অ্যাকাউন্ট ও অনুমোদন</a></li>
+        <li><a href="#t-order">অর্ডার ও মূল্য</a></li>
+        <li><a href="#t-delivery">ডেলিভারি, ফেরত ও বাতিল</a></li>
+        <li><a href="#t-wallet">ওয়ালেট ও উত্তোলন</a></li>
+        <li><a href="#t-niyom">যা করা যাবে না</a></li>
+        <li><a href="#t-tothya">কাস্টমারের তথ্য</a></li>
+        <li><a href="#t-suspend">অ্যাকাউন্ট স্থগিত বা বন্ধ</a></li>
+        <li><a href="#t-dayitto">দায়িত্বের সীমা</a></li>
+        <li><a href="#t-poriborton">শর্তের পরিবর্তন</a></li>
+        <li><a href="#t-ain">প্রযোজ্য আইন</a></li>
+        <li><a href="#t-jogajog-text">যোগাযোগ</a></li>
+      </ol>
+    </nav>
+
+    <article>
+      <section id="t-porichoy">
+        <h2>১. সেবার পরিচয়</h2>
+        <p>DropDoor হলো TechYard Bangladesh পরিচালিত একটি ড্রপশিপিং প্ল্যাটফর্ম। রিসেলাররা অ্যাপ থেকে পণ্য বেছে নিজের নির্ধারিত দামে কাস্টমারের জন্য অর্ডার দেন। প্যাকেজিং, কুরিয়ারে পাঠানো এবং ক্যাশ অন ডেলিভারির টাকা আদায় আমরা করি। ডেলিভারি সম্পন্ন হলে রিসেলারের লাভ তার ওয়ালেটে যোগ হয়।</p>
+        <p>এই শর্তে “আপনি” বলতে অ্যাকাউন্টধারী রিসেলারকে এবং “আমরা” বলতে DropDoor ও TechYard Bangladesh-কে বোঝানো হয়েছে।</p>
+      </section>
+
+      <section id="t-account">
+        <h2>২. অ্যাকাউন্ট ও অনুমোদন</h2>
+        <ul>
+          <li>অ্যাকাউন্ট খুলতে আপনার বয়স কমপক্ষে ১৮ বছর হতে হবে।</li>
+          <li>নাম, ১১ সংখ্যার ফোন নম্বর, দোকান বা পেজের নাম ও ঠিকানা সঠিক দিতে হবে। ফোন নম্বর এসএমএসের ৬ সংখ্যার কোড দিয়ে যাচাই করতে হয়।</li>
+          <li>অ্যাডমিন অনুমোদন দেওয়ার পরই আপনি পণ্য দেখা ও অর্ডার করা শুরু করতে পারবেন। অনুমোদন দেওয়া বা না দেওয়ার সিদ্ধান্ত আমাদের।</li>
+          <li>পাসওয়ার্ড গোপন রাখা আপনার দায়িত্ব। আপনার অ্যাকাউন্ট থেকে যা ঘটে, তার দায় আপনার।</li>
+          <li>একজন ব্যক্তি বা প্রতিষ্ঠানের জন্য একটি অ্যাকাউন্ট রাখতে হবে।</li>
+        </ul>
+      </section>
+
+      <section id="t-order">
+        <h2>৩. অর্ডার ও মূল্য</h2>
+        <ul>
+          <li><b>সরবরাহ মূল্য</b> আমরা নির্ধারণ করি। বিক্রয় মূল্য আপনি ঠিক করেন, তবে তা সরবরাহ মূল্যের কম হতে পারবে না।</li>
+          <li>আপনার নিট লাভ = কাস্টমারের কাছ থেকে নেওয়া টাকা − সরবরাহ মূল্য − ডেলিভারি চার্জ। বাড়তি লাভ ডেলিভারি চার্জের চেয়ে বেশি না হলে অর্ডার করা যায় না।</li>
+          <li>ডেলিভারি চার্জ এলাকাভেদে আলাদা (ঢাকার ভিতরে, সাব ঢাকা, ঢাকার বাইরে)। চার্জ বদলাতে পারে। অর্ডারের সময় অ্যাপে যা দেখায়, সেটিই প্রযোজ্য।</li>
+          <li>পণ্যের মূল্য, স্টক ও বিবরণ যেকোনো সময় বদলাতে পারে। স্টক শেষ হলে বা তথ্যে ভুল থাকলে আমরা অর্ডার নিশ্চিত না-ও করতে পারি।</li>
+          <li>সাইজ, কালার, কাস্টমারের নাম, ফোন ও ঠিকানা ঠিকভাবে দেওয়ার দায়িত্ব আপনার। ভুল তথ্যের কারণে ডেলিভারি ব্যর্থ হলে তা ফেরত অর্ডার হিসেবে ধরা হতে পারে।</li>
+        </ul>
+      </section>
+
+      <section id="t-delivery">
+        <h2>৪. ডেলিভারি, ফেরত ও বাতিল</h2>
+        <ul>
+          <li>অর্ডারের অবস্থা হলো অপেক্ষমাণ, নিশ্চিত, পাঠানো হয়েছে, ডেলিভারি সম্পন্ন এবং বাতিল বা ফেরত।</li>
+          <li>অর্ডার শুধু <b>অপেক্ষমাণ</b> অবস্থায় আপনি অ্যাপ থেকে বাতিল করতে পারবেন। এরপর বাতিল করতে চাইলে আমাদের জানান, তবে সেটি অনুমোদনসাপেক্ষ।</li>
+          <li>কাস্টমার পণ্য নিতে না চাইলে বা পার্সেল ফেরত এলে সেই অর্ডারের লাভ যোগ হয় না এবং ডেলিভারি চার্জ আপনার ব্যালেন্স থেকে কাটা হয়। ব্যালেন্স শূন্যের নিচে নামলে পরের ডেলিভারির লাভ থেকে তা মিটিয়ে নেওয়া হয়।</li>
+          <li>ডেলিভারির সময় কুরিয়ার ও এলাকার ওপর নির্ভর করে। সময়ের নিশ্চয়তা আমরা দিতে পারি না।</li>
+        </ul>
+      </section>
+
+      <section id="t-wallet">
+        <h2>৫. ওয়ালেট ও উত্তোলন</h2>
+        <ul>
+          <li>অর্ডার <b>ডেলিভারি সম্পন্ন</b> হলে লাভ ওয়ালেটে যোগ হয়। তার আগে তা “অপেক্ষমাণ লাভ” হিসেবে দেখায় এবং তোলা যায় না।</li>
+          <li>উত্তোলনের ন্যূনতম পরিমাণ ৳৫০০। একসাথে একটির বেশি উত্তোলনের অনুরোধ অপেক্ষমাণ রাখা যায় না।</li>
+          <li>bKash, Nagad বা ব্যাংক অ্যাকাউন্টে টাকা পাঠানো হয়। পাঁচটি পর্যন্ত পেমেন্ট অ্যাকাউন্ট যোগ করা যায়। অ্যাডমিন যাচাই করে টাকা পাঠান।</li>
+          <li>পেমেন্ট অ্যাকাউন্টের নম্বর ভুল দিলে সেই ভুলের দায় আপনার।</li>
+          <li>জালিয়াতি বা নিয়মভঙ্গের সন্দেহ থাকলে আমরা যাচাই শেষ না হওয়া পর্যন্ত উত্তোলন আটকে রাখতে পারি।</li>
+        </ul>
+      </section>
+
+      <section id="t-niyom">
+        <h2>৬. যা করা যাবে না</h2>
+        <ul>
+          <li>ভুয়া বা অন্যের পরিচয়ে অ্যাকাউন্ট খোলা।</li>
+          <li>ভুয়া অর্ডার দেওয়া, কাস্টমারের তথ্য নকল করা বা ইচ্ছাকৃতভাবে ফেরত অর্ডার ঘটানো।</li>
+          <li>কাস্টমারকে পণ্য সম্পর্কে মিথ্যা বা বিভ্রান্তিকর তথ্য দেওয়া।</li>
+          <li>অ্যাপ, সার্ভার বা অন্যের অ্যাকাউন্টে অননুমোদিত প্রবেশের চেষ্টা, অ্যাপ ঘেঁটে দেখা বা নকল করা।</li>
+          <li>আইনবিরুদ্ধ কাজে বা প্রতারণায় DropDoor ব্যবহার করা।</li>
+          <li>আমাদের পণ্যের ছবি ও বিবরণ DropDoor-এর মাধ্যমে বিক্রির বাইরে অন্য কোনো উদ্দেশ্যে বাণিজ্যিকভাবে ব্যবহার করা।</li>
+        </ul>
+      </section>
+
+      <section id="t-tothya">
+        <h2>৭. কাস্টমারের তথ্য</h2>
+        <p>অর্ডারের সময় দেওয়া কাস্টমারের নাম, ফোন ও ঠিকানা শুধু ডেলিভারির কাজে ব্যবহার করতে হবে। কীভাবে আমরা তথ্য সংগ্রহ ও ব্যবহার করি, তা জানতে আমাদের <a href="/privacy" data-nav="privacy">গোপনীয়তা নীতি</a> দেখুন।</p>
+      </section>
+
+      <section id="t-suspend">
+        <h2>৮. অ্যাকাউন্ট স্থগিত বা বন্ধ</h2>
+        <p>আপনি এই শর্ত ভাঙলে বা জালিয়াতির সন্দেহ হলে আমরা আগাম নোটিশ ছাড়াই অ্যাকাউন্ট স্থগিত বা বন্ধ করতে পারি। আপনি চাইলে যেকোনো সময় অ্যাকাউন্ট মুছে ফেলার অনুরোধ করতে পারেন, নিয়ম আছে <a href="/data-deletion" data-nav="deletion">তথ্য মুছে ফেলার নির্দেশিকা</a> পাতায়। অ্যাকাউন্ট বন্ধ হলেও আগের অর্ডার ও লেনদেনের হিসাব মেটানোর দায় থাকবে।</p>
+      </section>
+
+      <section id="t-dayitto">
+        <h2>৯. দায়িত্বের সীমা</h2>
+        <ul>
+          <li>অ্যাপ ও ওয়েবসাইট যেমন আছে, তেমনভাবে দেওয়া হয়। সবসময় বিঘ্নহীন বা ত্রুটিমুক্ত চলবে, এমন নিশ্চয়তা আমরা দিই না।</li>
+          <li>কুরিয়ারের দেরি, পার্সেল হারানো বা ক্ষতি, ইন্টারনেট বা পেমেন্ট সেবাদাতার সমস্যার মতো আমাদের নিয়ন্ত্রণের বাইরের ঘটনার জন্য আমরা সরাসরি দায়ী নই। তবে এমন ঘটনা ঘটলে সমাধানে সাহায্য করব।</li>
+          <li>আইন যতটুকু অনুমতি দেয়, আমাদের দায় আপনার অ্যাকাউন্টে থাকা সংশ্লিষ্ট অর্ডারের লাভ বা ব্যালেন্সের পরিমাণের মধ্যে সীমাবদ্ধ।</li>
+          <li>আপনার নিজের বিক্রয় কার্যক্রম, কাস্টমারের সাথে আচরণ ও পেজের বিজ্ঞাপনের দায় আপনার।</li>
+        </ul>
+      </section>
+
+      <section id="t-poriborton">
+        <h2>১০. শর্তের পরিবর্তন</h2>
+        <p>আমরা প্রয়োজনে এই শর্ত, ডেলিভারি চার্জ বা নিয়ম বদলাতে পারি। বড় পরিবর্তন হলে অ্যাপের নোটিশ ট্যাবে বা এই পাতায় জানানো হবে। পরিবর্তনের পরও অ্যাপ ব্যবহার চালালে নতুন শর্ত মেনে নেওয়া হয়েছে বলে ধরা হবে।</p>
+      </section>
+
+      <section id="t-ain">
+        <h2>১১. প্রযোজ্য আইন</h2>
+        <p>এই শর্ত বাংলাদেশের প্রচলিত আইন অনুযায়ী পরিচালিত হবে। কোনো বিরোধ হলে প্রথমে আলোচনার মাধ্যমে মেটানোর চেষ্টা করা হবে। তা না হলে ঢাকার এখতিয়ারসম্পন্ন আদালতে নিষ্পত্তি হবে।</p>
+      </section>
+
+      <section id="t-jogajog-text">
+        <h2>১২. যোগাযোগ</h2>
+        <p>এই শর্ত নিয়ে প্রশ্ন থাকলে <a href="mailto:mahmudurchowdhuryfahim@gmail.com">mahmudurchowdhuryfahim@gmail.com</a> ঠিকানায় ইমেইল করুন, অথবা নিচের যেকোনো মাধ্যমে জানান। ডেভেলপার: TechYard Bangladesh, Bashabo, Sabujbag, Dhaka।</p>
+      </section>
+    </article>
+  </div>
+
+  <div class="contact">
+    <div>
+      <h2>প্রশ্ন আছে?</h2>
+      <p>শর্ত বা নিয়ম নিয়ে যেকোনো প্রশ্ন সরাসরি লিখুন। আমরা সাহায্য করব।</p>
+    </div>
+    <div class="links">
+      <a href="https://wa.me/8801863709122" target="_blank" rel="noopener">WhatsApp <small>+৮৮০ ১৮৬৩-৭০৯১২২</small></a>
+      <a href="https://t.me/dropdoor" target="_blank" rel="noopener">Telegram <small>@dropdoor</small></a>
+      <a href="mailto:mahmudurchowdhuryfahim@gmail.com">Email <small>mahmudurchowdhuryfahim@gmail.com</small></a>
+      <a href="https://facebook.com/dropdoor" target="_blank" rel="noopener">Facebook <small>facebook.com/dropdoor</small></a>
+    </div>
+  </div>
+</main>
+
+<div class="wrap">
+  <footer>
+    <span><b>DropDoor</b> · আপনার অনলাইন ব্যবসার বিশ্বস্ত সঙ্গী</span>
+    <span><a href="/" data-nav="home">হোম</a> · <a href="/privacy" data-nav="privacy">গোপনীয়তা নীতি</a> · <a href="/data-deletion" data-nav="deletion">তথ্য মুছে ফেলা</a> · © <span class="yr">২০২৬</span> DropDoor · TechYard Bangladesh</span>
+  </footer>
+</div>
+
+</div>
+
+<!-- ================= DATA DELETION ( /data-deletion ) ================= -->
+<div id="view-deletion" class="sub" hidden>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="/" data-nav="home" aria-label="DropDoor হোম">
+        <svg viewBox="28 28 52 54" aria-hidden="true"><path d="M54 28l26 13-26 13-26-13z" fill="#fff"/><path d="M28 43l24 12v27L28 70z" fill="#D1FAE5"/><path d="M56 55l24-12v27L56 82z" fill="#A5F3FC"/></svg>
+        DropDoor
+      </a>
+      <a class="back" href="/" data-nav="home">← হোমে ফিরুন</a>
+    </div>
+    <h1>তথ্য মুছে ফেলার নির্দেশিকা</h1>
+    <p class="lead">DropDoor-এ আপনার অ্যাকাউন্ট ও ব্যক্তিগত তথ্য মুছে ফেলতে চাইলে কী করতে হবে, কোন তথ্য মোছা হবে আর কোনটি আইনি কারণে রাখতে হতে পারে, তা এখানে বলা আছে।</p>
+    <p class="upd">সর্বশেষ হালনাগাদ: ১৯ নভেম্বর ২০২৬</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="doc">
+    <nav class="toc" aria-label="সূচিপত্র">
+      <h2>এই পাতায় যা আছে</h2>
+      <ol>
+        <li><a href="#d-dhap">অনুরোধ করবেন যেভাবে</a></li>
+        <li><a href="#d-age">আগে যা করে নিন</a></li>
+        <li><a href="#d-muchbe">যা মুছে দেওয়া হবে</a></li>
+        <li><a href="#d-rakhbo">যা রেখে দিতে হতে পারে</a></li>
+        <li><a href="#d-somoy">কতদিন লাগবে</a></li>
+        <li><a href="#d-meta">Meta (Facebook) থেকে তথ্য মোছা</a></li>
+        <li><a href="#d-jogajog-text">সাহায্য দরকার হলে</a></li>
+      </ol>
+    </nav>
+
+    <article>
+      <div class="idcard" id="d-porichoy">
+        <h2>এই পাতা কার জন্য</h2>
+        <p>এই নির্দেশিকা <b>DropDoor</b> অ্যাপ (প্যাকেজ: <b>dropdoor.app</b>) এবং <b>dropdoor.com.bd</b> ওয়েবসাইটের ব্যবহারকারীদের জন্য। ডেভেলপার: TechYard Bangladesh। অনুরোধ করতে আপনাকে অ্যাপে লগইন থাকতে হবে না, ইমেইল বা মেসেজেই করা যায়।</p>
+        <a class="btn dark mailbtn" href="mailto:mahmudurchowdhuryfahim@gmail.com?subject=Account%20Deletion&body=%E0%A6%86%E0%A6%AE%E0%A6%BF%20DropDoor%20%E0%A6%85%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%95%E0%A6%BE%E0%A6%89%E0%A6%A8%E0%A7%8D%E0%A6%9F%20%E0%A6%93%20%E0%A6%B8%E0%A6%82%E0%A6%B6%E0%A7%8D%E0%A6%B2%E0%A6%BF%E0%A6%B7%E0%A7%8D%E0%A6%9F%20%E0%A6%A4%E0%A6%A5%E0%A7%8D%E0%A6%AF%20%E0%A6%AE%E0%A7%81%E0%A6%9B%E0%A7%87%20%E0%A6%AB%E0%A7%87%E0%A6%B2%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4%0A%0A%E0%A6%A8%E0%A6%BF%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A7%E0%A6%BF%E0%A6%A4%20%E0%A6%AB%E0%A7%8B%E0%A6%A8%20%E0%A6%A8%E0%A6%AE%E0%A7%8D%E0%A6%AC%E0%A6%B0%3A%20%0A%E0%A6%A8%E0%A6%BE%E0%A6%AE%3A%20">ইমেইলে অনুরোধ পাঠান</a>
+      </div>
+
+      <section id="d-dhap">
+        <h2>১. অনুরোধ করবেন যেভাবে</h2>
+        <ol class="steps">
+          <li>
+            <h3>ইমেইল পাঠান</h3>
+            <p><a href="mailto:mahmudurchowdhuryfahim@gmail.com?subject=Account%20Deletion">mahmudurchowdhuryfahim@gmail.com</a> ঠিকানায় ইমেইল করুন। বিষয়ে লিখুন <b>Account Deletion</b>।</p>
+          </li>
+          <li>
+            <h3>পরিচয়ের তথ্য দিন</h3>
+            <p>ইমেইলে আপনার নাম এবং DropDoor-এ নিবন্ধিত ১১ সংখ্যার ফোন নম্বর লিখুন। এটি দিয়ে আমরা অ্যাকাউন্টটি আপনার কিনা যাচাই করব।</p>
+          </li>
+          <li>
+            <h3>যাচাই ও নিশ্চিতকরণ</h3>
+            <p>প্রয়োজনে আমরা নিবন্ধিত নম্বরে ফোন বা মেসেজ করে নিশ্চিত হব। এতে অন্য কেউ আপনার অ্যাকাউন্ট মুছে ফেলতে পারবে না।</p>
+          </li>
+          <li>
+            <h3>মুছে ফেলা ও জানানো</h3>
+            <p>যাচাই শেষ হলে আমরা অ্যাকাউন্ট ও সংশ্লিষ্ট তথ্য মুছে দেব এবং কাজ শেষ হলে আপনাকে জানাব।</p>
+          </li>
+        </ol>
+        <p class="note">ইমেইল ব্যবহার করতে না পারলে <a href="https://wa.me/8801863709122" target="_blank" rel="noopener">WhatsApp (+৮৮০ ১৮৬৩-৭০৯১২২)</a> বা <a href="https://t.me/dropdoor" target="_blank" rel="noopener">Telegram (@dropdoor)</a>-এ একই তথ্য দিয়ে লিখতে পারেন। অনুরোধ নিবন্ধিত ফোন নম্বর থেকে পাঠালে যাচাই দ্রুত হয়।</p>
+      </section>
+
+      <section id="d-age">
+        <h2>২. আগে যা করে নিন</h2>
+        <ul>
+          <li><b>ওয়ালেটের ব্যালেন্স তুলে নিন।</b> অ্যাকাউন্ট মুছে ফেললে ওয়ালেটে থাকা টাকার দাবি আর থাকবে না। ন্যূনতম ৳৫০০ হলে অ্যাপ থেকে উত্তোলনের অনুরোধ পাঠান। কম থাকলে ইমেইলে আমাদের জানান, আমরা ব্যবস্থা দেখব।</li>
+          <li><b>চলমান অর্ডার শেষ হতে দিন।</b> অপেক্ষমাণ, নিশ্চিত বা পাঠানো অবস্থায় থাকা অর্ডারের ডেলিভারি ও হিসাব মেটানো না হওয়া পর্যন্ত আমরা অ্যাকাউন্ট মুছতে নাও পারি।</li>
+          <li><b>বকেয়া থাকলে মিটিয়ে নিন।</b> ফেরত অর্ডারের ডেলিভারি চার্জে ব্যালেন্স ঋণাত্মক হলে তা মেটাতে হবে।</li>
+        </ul>
+      </section>
+
+      <section id="d-muchbe">
+        <h2>৩. যা মুছে দেওয়া হবে</h2>
+        <ul>
+          <li>আপনার নাম, ফোন নম্বর, দোকান বা পেজের নাম, ঠিকানা এবং পাসওয়ার্ড।</li>
+          <li>উত্তোলনের জন্য যোগ করা bKash, Nagad ও ব্যাংক অ্যাকাউন্টের তথ্য।</li>
+          <li>পছন্দের তালিকা, কার্ট, নোটিফিকেশন-সংক্রান্ত তথ্য এবং আপনার সঙ্গে জড়িত অ্যাপ ব্যবহারের তথ্য।</li>
+          <li>আপনার অ্যাকাউন্টের লগইন ও ডিভাইস সেশন, যাতে আর কেউ ঢুকতে না পারে।</li>
+          <li>WhatsApp, Telegram বা ইমেইলে আপনার পাঠানো বার্তা, যা আমাদের নিয়ন্ত্রণে আছে এবং আইনি কারণে রাখার প্রয়োজন নেই।</li>
+        </ul>
+      </section>
+
+      <section id="d-rakhbo">
+        <h2>৪. যা রেখে দিতে হতে পারে</h2>
+        <p>আইন, কর বা হিসাবের প্রয়োজনে এবং জালিয়াতি ঠেকাতে কিছু তথ্য আমাদের নির্দিষ্ট সময় রাখতে হতে পারে। তখন তথ্যগুলো আর অ্যাকাউন্টে দেখা যাবে না এবং অন্য কোনো কাজে ব্যবহার হবে না।</p>
+        <ul>
+          <li>সম্পন্ন অর্ডার ও আর্থিক লেনদেনের হিসাব, যেমন অর্ডার নম্বর, পরিমাণ ও তারিখ।</li>
+          <li>উত্তোলনের লেনদেনের রেকর্ড।</li>
+          <li>কাস্টমারের নাম, ফোন ও ঠিকানা, যা ডেলিভারি ও ফেরতের হিসাব মেলাতে অর্ডারের সাথে যুক্ত। এটি আপনার নয়, অর্ডারের তথ্য হিসেবে রাখা হয় এবং বাধ্যতামূলক সময়ের পর মুছে ফেলা হবে।</li>
+          <li>জালিয়াতি বা নিয়মভঙ্গের কারণে অ্যাকাউন্ট বন্ধ হয়ে থাকলে সেই সংক্রান্ত রেকর্ড।</li>
+        </ul>
+      </section>
+
+      <section id="d-somoy">
+        <h2>৫. কতদিন লাগবে</h2>
+        <p>অনুরোধ পাওয়ার পর পরিচয় যাচাই শেষে আমরা সাধারণত <b>৭ কার্যদিবসের মধ্যে</b> অ্যাকাউন্ট ও তথ্য মুছে দিই এবং আপনাকে নিশ্চিত করি। যাচাইয়ের জন্য আরও তথ্য লাগলে বা চলমান অর্ডার থাকলে একটু বেশি সময় লাগতে পারে। অ্যাকাউন্ট মুছে গেলে তা আর ফিরিয়ে আনা যায় না। তখন আবার ব্যবহার করতে চাইলে নতুন অ্যাকাউন্ট খুলতে হবে এবং অ্যাডমিন অনুমোদন লাগবে।</p>
+      </section>
+
+      <section id="d-meta">
+        <h2>৬. Meta (Facebook) থেকে তথ্য মোছা</h2>
+        <p>DropDoor অ্যাপে Facebook SDK আছে (বিস্তারিত <a href="/privacy" data-nav="privacy">গোপনীয়তা নীতিতে</a>)। DropDoor-এর অ্যাকাউন্ট মুছলে আমাদের সার্ভারের তথ্য মোছা হয়, কিন্তু SDK-এর মাধ্যমে Meta নিজে যে তথ্য পেয়েছে, তা Meta-র কাছে থাকে। সেটি নিয়ন্ত্রণ করতে চাইলে:</p>
+        <ul>
+          <li>Facebook অ্যাকাউন্টে গিয়ে Settings-এর “Your activity outside Meta technologies” অংশ থেকে DropDoor-এর পাঠানো তথ্য দেখুন, মুছুন বা ভবিষ্যতের জন্য আলাদা করে দিন।</li>
+          <li>ফোনের Settings → Google → Ads থেকে Advertising ID মুছুন বা রিসেট করুন।</li>
+          <li>Meta-র নিজস্ব নিয়ম জানতে দেখুন <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta-র গোপনীয়তা নীতি</a>।</li>
+        </ul>
+        <p>আপনি যদি আগে Facebook দিয়ে DropDoor-এর সাথে কোনো অ্যাকাউন্ট যুক্ত করে থাকেন, Facebook-এর Settings → Apps and Websites থেকে DropDoor সরিয়ে দিতে পারেন। এতে DropDoor আর আপনার Facebook তথ্য পাবে না।</p>
+      </section>
+
+      <section id="d-jogajog-text">
+        <h2>৭. সাহায্য দরকার হলে</h2>
+        <p>অনুরোধের অবস্থা জানতে বা কোনো প্রশ্ন থাকলে <a href="mailto:mahmudurchowdhuryfahim@gmail.com">mahmudurchowdhuryfahim@gmail.com</a> ঠিকানায় লিখুন। আপনার অন্যান্য অধিকার জানতে দেখুন <a href="/privacy" data-nav="privacy">গোপনীয়তা নীতি</a> এবং <a href="/terms" data-nav="terms">সেবার শর্তাবলি</a>।</p>
+      </section>
+    </article>
+  </div>
+
+  <div class="contact">
+    <div>
+      <h2>অনুরোধ পাঠাতে চান?</h2>
+      <p>নিবন্ধিত ফোন নম্বরসহ লিখলেই আমরা যাচাই শুরু করব।</p>
+    </div>
+    <div class="links">
+      <a href="mailto:mahmudurchowdhuryfahim@gmail.com?subject=Account%20Deletion">Email <small>mahmudurchowdhuryfahim@gmail.com</small></a>
+      <a href="https://wa.me/8801863709122" target="_blank" rel="noopener">WhatsApp <small>+৮৮০ ১৮৬৩-৭০৯১২২</small></a>
+      <a href="https://t.me/dropdoor" target="_blank" rel="noopener">Telegram <small>@dropdoor</small></a>
+      <a href="https://facebook.com/dropdoor" target="_blank" rel="noopener">Facebook <small>facebook.com/dropdoor</small></a>
+    </div>
+  </div>
+</main>
+
+<div class="wrap">
+  <footer>
+    <span><b>DropDoor</b> · আপনার অনলাইন ব্যবসার বিশ্বস্ত সঙ্গী</span>
+    <span><a href="/" data-nav="home">হোম</a> · <a href="/privacy" data-nav="privacy">গোপনীয়তা নীতি</a> · <a href="/terms" data-nav="terms">সেবার শর্তাবলি</a> · © <span class="yr">২০২৬</span> DropDoor · TechYard Bangladesh</span>
   </footer>
 </div>
 
@@ -586,26 +914,43 @@ function calc() {
 $("calc").addEventListener("input", calc);
 calc();
 
-// ---- tiny router with clean URLs: "/" -> home, "/privacy" -> privacy page (no # in the link) ----
-const HOME_TITLE = "DropDoor – পণ্য আমাদের, লাভ আপনার";
-const PRIV_TITLE = "গোপনীয়তা নীতি – DropDoor";
+// ---- tiny router with clean URLs, no "#" in the link ----
+//   /               -> home
+//   /privacy        -> privacy policy
+//   /terms          -> terms of service
+//   /data-deletion  -> user data deletion instructions
+// The server must serve this same index.html for these paths (see rewrite note in the reply).
+const PAGES = {
+  home:     { view: "view-home",     path: "/",              title: "DropDoor – পণ্য আমাদের, লাভ আপনার" },
+  privacy:  { view: "view-privacy",  path: "/privacy",       title: "গোপনীয়তা নীতি – DropDoor" },
+  terms:    { view: "view-terms",    path: "/terms",         title: "সেবার শর্তাবলি – DropDoor" },
+  deletion: { view: "view-deletion", path: "/data-deletion", title: "তথ্য মুছে ফেলার নির্দেশিকা – DropDoor" }
+};
 const isFile = location.protocol === "file:"; // opened straight from disk: clean URLs are impossible, fall back to a hash
-function isPrivacy() { return /\/privacy(\.html)?\/?$/.test(location.pathname) || location.hash === "#/privacy"; }
+
+function currentPage() {
+  const p = location.pathname.replace(/\/+$/, "").replace(/\.html$/, "");
+  if (/\/privacy$/.test(p)) return "privacy";
+  if (/\/terms$/.test(p)) return "terms";
+  if (/\/data-deletion$/.test(p)) return "deletion";
+  const m = location.hash.match(/^#\/(privacy|terms|data-deletion)$/);
+  if (m) return m[1] === "data-deletion" ? "deletion" : m[1];
+  return "home";
+}
 function route() {
-  const priv = isPrivacy();
-  // old "#/privacy" links become "/privacy" on a real server
-  if (!isFile && location.hash === "#/privacy") history.replaceState({}, "", "/privacy");
-  $("view-home").hidden = priv;
-  $("view-privacy").hidden = !priv;
-  document.title = priv ? PRIV_TITLE : HOME_TITLE;
+  const key = currentPage();
+  // old "#/privacy"-style links become clean paths on a real server
+  if (!isFile && /^#\/(privacy|terms|data-deletion)$/.test(location.hash)) history.replaceState({}, "", PAGES[key].path);
+  Object.keys(PAGES).forEach(k => { $(PAGES[k].view).hidden = (k !== key); });
+  document.title = PAGES[key].title;
   const h = location.hash;
-  if (priv || !h || h === "#/" || h === "#") { window.scrollTo(0, 0); return; }
+  if (key !== "home" || !h || h === "#/" || h === "#") { window.scrollTo(0, 0); return; }
   const t = document.getElementById(decodeURIComponent(h.slice(1)));
   if (t) t.scrollIntoView();
 }
-function go(to) {
-  if (isFile) { location.hash = to === "privacy" ? "#/privacy" : "#/"; return; }
-  history.pushState({}, "", to === "privacy" ? "/privacy" : "/");
+function go(key) {
+  if (isFile) { location.hash = key === "home" ? "#/" : "#" + PAGES[key].path; return; }
+  history.pushState({}, "", PAGES[key].path);
   route();
 }
 document.querySelectorAll("[data-nav]").forEach(a => a.addEventListener("click", e => {
